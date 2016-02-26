@@ -1,5 +1,6 @@
-package com.pubsale.dto;
+package dto;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
@@ -22,6 +23,7 @@ public class CreateAuctionResponse implements Serializable {
         this.failReason = failReason;
     }
 
+    @XmlElement
     public boolean isIsCreated() {
         return IsCreated;
     }
@@ -30,6 +32,7 @@ public class CreateAuctionResponse implements Serializable {
         IsCreated = isCreated;
     }
 
+    @XmlElement
     public String getFailReason() {
         return failReason;
     }

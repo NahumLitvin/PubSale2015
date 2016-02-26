@@ -1,6 +1,8 @@
 package com.pubsale.interfaces;
 
-import com.pubsale.dto.*;
+import dto.*;
+
+import java.util.List;
 
 public interface IPubSaleService {
     /**
@@ -14,6 +16,9 @@ public interface IPubSaleService {
     RegisterResponse Register(RegisterRequest request);
 
     CreateAuctionResponse CreateAuction(CreateAuctionRequest request);
+
+    List<AuctionDTO> GetAuctions(GetAuctionsRequest request);
+
 
     void Close();
 

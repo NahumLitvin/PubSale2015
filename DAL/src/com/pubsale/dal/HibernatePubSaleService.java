@@ -1,8 +1,8 @@
 package com.pubsale.dal;
 
 import com.pubsale.PasswordHash;
-import com.pubsale.dto.*;
 import com.pubsale.interfaces.IPubSaleService;
+import dto.*;
 import org.jinq.jpa.JinqJPAStreamProvider;
 import org.modelmapper.ModelMapper;
 
@@ -12,10 +12,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.Calendar;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 public class HibernatePubSaleService implements IPubSaleService {
 
@@ -105,6 +102,11 @@ public class HibernatePubSaleService implements IPubSaleService {
         AuctionDAO auction = modelMapper.map(request.getAuction(), AuctionDAO.class);
         em.persist(auction);
         em.getTransaction().commit();
+        return null;
+    }
+
+    @Override
+    public List<AuctionDTO> GetAuctions(GetAuctionsRequest request) {
         return null;
     }
 

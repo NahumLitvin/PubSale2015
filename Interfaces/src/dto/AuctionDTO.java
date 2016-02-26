@@ -1,4 +1,4 @@
-package com.pubsale.dto;
+package dto;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -20,6 +20,7 @@ public class AuctionDTO implements Serializable {
     private int endPrice;
     private Date startDate;
     private Date endDate;
+    private int topBidSum;
 
     public AuctionDTO() {
         // TODO Auto-generated constructor stub
@@ -93,4 +94,12 @@ public class AuctionDTO implements Serializable {
         this.endDate = endDate;
     }
 
+    @XmlElement
+    public int getTopBidSum() {
+        return topBidSum;
+    }
+
+    public void setTopBidSum(int topBidSum) {
+        this.topBidSum = topBidSum;
+    }
 }

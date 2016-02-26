@@ -1,4 +1,6 @@
-package com.pubsale.dto;
+package dto;
+
+import javax.xml.bind.annotation.XmlElement;
 
 public class LoginResponse {
     private String session;
@@ -12,6 +14,7 @@ public class LoginResponse {
         // TODO Auto-generated constructor stub
     }
 
+    @XmlElement
     /*if not null user is logged in*/
     public String getSession() {
         return session;

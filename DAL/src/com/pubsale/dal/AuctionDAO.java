@@ -17,6 +17,9 @@ class AuctionDAO {
     private Date startDate;
     private Date endDate;
     private UserDAO seller;
+    private int topBidSum;
+    private UserDAO topBidder;
+
 
     public AuctionDAO() {
         // TODO Auto-generated constructor stub
@@ -102,6 +105,25 @@ class AuctionDAO {
 
     public void setSeller(UserDAO seller) {
         this.seller = seller;
+    }
+
+    @OneToOne
+    public UserDAO getTopBidder() {
+        return topBidder;
+    }
+
+    public void setTopBidder(UserDAO topBidder) {
+        this.topBidder = topBidder;
+    }
+
+
+    @Column
+    public int getTopBidSum() {
+        return topBidSum;
+    }
+
+    public void setTopBidSum(int topBidSum) {
+        this.topBidSum = topBidSum;
     }
 
 }

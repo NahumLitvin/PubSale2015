@@ -1,4 +1,4 @@
-package com.pubsale.dto;
+package dto;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -7,9 +7,9 @@ import java.io.Serializable;
 @XmlRootElement
 public class CreateAuctionRequest implements Serializable {
     private static final long serialVersionUID = -2849429158861402846L;
-    @XmlElement
+
     AuctionDTO auction;
-    @XmlElement
+
     IsLoggedInRequest isLoggedIn;
 
     /**
@@ -26,6 +26,7 @@ public class CreateAuctionRequest implements Serializable {
         this.isLoggedIn = isLoggedIn;
     }
 
+    @XmlElement
     public AuctionDTO getAuction() {
         return auction;
     }
@@ -34,6 +35,7 @@ public class CreateAuctionRequest implements Serializable {
         this.auction = auction;
     }
 
+    @XmlElement
     public IsLoggedInRequest getIsLoggedIn() {
         return isLoggedIn;
     }

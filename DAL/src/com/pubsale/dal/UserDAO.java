@@ -1,6 +1,6 @@
 package com.pubsale.dal;
 
-import com.pubsale.dto.RegisterRequest;
+import dto.RegisterRequest;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

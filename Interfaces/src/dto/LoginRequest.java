@@ -1,5 +1,6 @@
-package com.pubsale.dto;
+package dto;
 
+import javax.xml.bind.annotation.XmlElement;
 import java.io.Serializable;
 
 public class LoginRequest implements Serializable {
@@ -20,6 +21,7 @@ public class LoginRequest implements Serializable {
         this.password = password;
     }
 
+    @XmlElement
     public String getEmail() {
         return email;
     }
@@ -28,6 +30,7 @@ public class LoginRequest implements Serializable {
         this.email = email;
     }
 
+    @XmlElement
     public String getPassword() {
         return password;
     }
