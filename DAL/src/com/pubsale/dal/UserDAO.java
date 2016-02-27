@@ -1,6 +1,6 @@
 package com.pubsale.dal;
 
-import dto.RegisterRequest;
+import dto.RegisterRequestDTO;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ class UserDAO {
         // TODO Auto-generated constructor stub
     }
 
-    public UserDAO(RegisterRequest request, String saltedHashedPassword) {
+    public UserDAO(RegisterRequestDTO request, String saltedHashedPassword) {
         this.email = request.getEmail();
         this.name = request.getName();
         this.phone = request.getPhone();

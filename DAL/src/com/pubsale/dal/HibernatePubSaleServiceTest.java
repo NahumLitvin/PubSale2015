@@ -30,57 +30,57 @@ public class HibernatePubSaleServiceTest {
 
     @Test
     public void FirstRegisterOK() {
-        RegisterResponse res = RegisterNahum();
-        Assert.assertEquals(RegisterStatus.OK, res.getStatus());
+        RegisterResponseDTO res = RegisterNahum();
+        Assert.assertEquals(RegisterStatusDTO.OK, res.getStatus());
     }
 
     @Test
     public void DoubleRegisterError() {
         RegisterNahum();
-        RegisterResponse res = RegisterNahum();
-        Assert.assertEquals(RegisterStatus.UserExists, res.getStatus());
+        RegisterResponseDTO res = RegisterNahum();
+        Assert.assertEquals(RegisterStatusDTO.UserExists, res.getStatus());
     }
 
 
     @Test
     public void LoginFailsIfNotRegistered() {
-        LoginResponse loginNahum = LoginNahum();
+        LoginResponseDTO loginNahum = LoginNahum();
         Assert.assertEquals(null, loginNahum.getSession());
     }
 
     @Test
     public void LoginSuccedesIfRegistered() {
-        LoginResponse loginNahum = RegisterAndLoginNahum();
+        LoginResponseDTO loginNahum = RegisterAndLoginNahum();
         Assert.assertNotEquals(null, loginNahum.getSession());
     }
 
     @Test
     public void IsLoggedInFailsIfBadSession() {
-        IsLoggedInResponse isLoggedIn = service.IsLoggedIn(new IsLoggedInRequest(UUID.randomUUID().toString(), LNAHUM_GMAIL_COM));
+        IsLoggedInResponseDTO isLoggedIn = service.IsLoggedIn(new IsLoggedInRequestDTO(UUID.randomUUID().toString(), LNAHUM_GMAIL_COM));
         Assert.assertFalse(isLoggedIn.isLoggedIn());
     }
 
     @Test
     public void IsLoggedInTrueIfSessionIsOk() {
-        LoginResponse loginNahum = RegisterAndLoginNahum();
-        IsLoggedInResponse isLoggedIn = service.IsLoggedIn(new IsLoggedInRequest(loginNahum.getSession().toString(), LNAHUM_GMAIL_COM));
+        LoginResponseDTO loginNahum = RegisterAndLoginNahum();
+        IsLoggedInResponseDTO isLoggedIn = service.IsLoggedIn(new IsLoggedInRequestDTO(loginNahum.getSession().toString(), LNAHUM_GMAIL_COM));
         Assert.assertTrue(isLoggedIn.isLoggedIn());
     }
 
-    private LoginResponse RegisterAndLoginNahum() {
+    private LoginResponseDTO RegisterAndLoginNahum() {
         RegisterNahum();
-        LoginResponse loginNahum = LoginNahum();
+        LoginResponseDTO loginNahum = LoginNahum();
         return loginNahum;
     }
 
-    private RegisterResponse RegisterNahum() {
-        RegisterRequest request = new RegisterRequest(LNAHUM_GMAIL_COM, PASSWORD, NAHUM_LITVIN, PHONE);
+    private RegisterResponseDTO RegisterNahum() {
+        RegisterRequestDTO request = new RegisterRequestDTO(LNAHUM_GMAIL_COM, PASSWORD, NAHUM_LITVIN, PHONE);
         return service.Register(request);
 
     }
 
-    private LoginResponse LoginNahum() {
-        LoginRequest request = new LoginRequest(LNAHUM_GMAIL_COM, PASSWORD);
+    private LoginResponseDTO LoginNahum() {
+        LoginRequestDTO request = new LoginRequestDTO(LNAHUM_GMAIL_COM, PASSWORD);
         return service.Login(request);
 
     }

@@ -35,22 +35,27 @@ public class HibernatePubSaleService implements IPubSaleService {
     }
 
     @Override
-    public IsLoggedInResponse IsLoggedIn(IsLoggedInRequest request) {
+    public IsLoggedInResponseDTO IsLoggedIn(IsLoggedInRequestDTO request) {
 
         String s = request.getSession();
         Optional<SessionDAO> session = streams.streamAll(em, SessionDAO.class)
                 .where(x -> (Objects.equals(x.getSession(), s))).findOne();
 
         if (!session.isPresent())
-            return new IsLoggedInResponse(false);
+            return new IsLoggedInResponseDTO() {{
+                setLoggedIn(true);
+            }};
+
         boolean IsEmailOK = Objects.equals(request.getEmail(), session.get().getUser().getEmail());
         boolean IsDateOk = Calendar.getInstance().getTime().compareTo(session.get().getExpirationDate()) < 0;
-        IsLoggedInResponse res = new IsLoggedInResponse(IsEmailOK && IsDateOk);
+        IsLoggedInResponseDTO res = new IsLoggedInResponseDTO() {{
+            setLoggedIn(IsEmailOK && IsDateOk);
+        }};
         return res;
     }
 
     @Override
-    public LoginResponse Login(LoginRequest request) {
+    public LoginResponseDTO Login(LoginRequestDTO request) {
         String email = request.getEmail();
         do {
             try {
@@ -63,7 +68,7 @@ public class HibernatePubSaleService implements IPubSaleService {
                         user.get().getSaltedHashedPassword()))
                     break;
 
-                return new LoginResponse(createSession(user.get()).getSession());
+                return new LoginResponseDTO(createSession(user.get()).getSession());
 
             } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
                 // TODO Auto-generated catch block
@@ -73,31 +78,32 @@ public class HibernatePubSaleService implements IPubSaleService {
         } while (false);
 
         // check hash create new session id add to db and return session id.
-        return new LoginResponse(null);
+        return new LoginResponseDTO(null);
     }
 
     @Override
-    public RegisterResponse Register(RegisterRequest request) {
+    public RegisterResponseDTO Register(RegisterRequestDTO request) {
 
         try {
 
             if (isUserRegistered(request))
-                return new RegisterResponse(RegisterStatus.UserExists);
+                return new RegisterResponseDTO(RegisterStatusDTO.UserExists);
             registerUser(request);
-            return new RegisterResponse(RegisterStatus.OK);
+            return new RegisterResponseDTO(RegisterStatusDTO.OK);
 
         } catch (NoSuchAlgorithmException | InvalidKeySpecException | EntityExistsException
                 | IllegalArgumentException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            return new RegisterResponse(RegisterStatus.Exception);
+            return new RegisterResponseDTO(RegisterStatusDTO.Exception);
         }
 
     }
 
     @Override
-    public CreateAuctionResponse CreateAuction(CreateAuctionRequest request) {
-        if (!IsLoggedIn(request.getIsLoggedIn()).isLoggedIn()) return new CreateAuctionResponse(false, "not logged in");
+    public CreateAuctionResponseDTO CreateAuction(CreateAuctionRequestDTO request) {
+        if (!IsLoggedIn(request.getIsLoggedIn()).isLoggedIn())
+            return new CreateAuctionResponseDTO(false, "not logged in");
         em.getTransaction().begin();
         AuctionDAO auction = modelMapper.map(request.getAuction(), AuctionDAO.class);
         em.persist(auction);
@@ -106,11 +112,11 @@ public class HibernatePubSaleService implements IPubSaleService {
     }
 
     @Override
-    public List<AuctionDTO> GetAuctions(GetAuctionsRequest request) {
+    public List<AuctionDTO> GetAuctions(GetAuctionsRequestDTO request) {
         return null;
     }
 
-    private void registerUser(RegisterRequest request) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    private void registerUser(RegisterRequestDTO request) throws NoSuchAlgorithmException, InvalidKeySpecException {
         String hashedandsaltedpassword = PasswordHash.createHash(request.getPassword());
         em.getTransaction().begin();
         UserDAO newuser = new UserDAO(request, hashedandsaltedpassword);
@@ -128,7 +134,7 @@ public class HibernatePubSaleService implements IPubSaleService {
         return session;
     }
 
-    private Boolean isUserRegistered(RegisterRequest request) {
+    private Boolean isUserRegistered(RegisterRequestDTO request) {
         String email = request.getEmail();
         Optional<UserDAO> user = streams.streamAll(em, UserDAO.class).where(x -> (Objects.equals(x.getEmail(), email)))
                 .findOne();

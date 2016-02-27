@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Interfaces:war">
+    <output-path>$PROJECT_DIR$/Interfaces/target</output-path>
+    <root id="archive" name="Interfaces-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Interfaces:war exploded" />
+    </root>
+  </artifact>
+</component>

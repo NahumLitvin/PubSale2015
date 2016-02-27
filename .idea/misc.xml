@@ -3,10 +3,17 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/DAL" />
+    <file type="web" url="file://$PROJECT_DIR$/Interfaces" />
+    <file type="web" url="file://$PROJECT_DIR$/WebService" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/DAL/pom.xml" />
+        <option value="$PROJECT_DIR$/WebService/pom.xml" />
+        <option value="$PROJECT_DIR$/Interfaces/pom.xml" />
       </list>
     </option>
   </component>
@@ -46,6 +53,9 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>

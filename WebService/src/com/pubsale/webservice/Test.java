@@ -1,44 +1,32 @@
 package com.pubsale.webservice;
 
-import com.pubsale.dal.HibernatePubSaleService;
-import dto.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import java.util.List;
-
-@Path("/pubsale")
-public class PubSaleService {
-    HibernatePubSaleService service = new HibernatePubSaleService();
-
-    @GET
-    @Path("/hi")
-    public String Hi() {
-        return "hi";
+/**
+ * Created by Nahum on 26/02/2016.
+ */
+@WebServlet(name = "hello", urlPatterns = "/")
+public class Test extends HttpServlet {
+    //IPubSaleService service = new HibernatePubSaleService();
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.getWriter().write("Test");
     }
+/*
 
-
-    @Path("/IsLoggedInRequestDTO")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @GET
-    public IsLoggedInRequestDTO IsLoggedInRequestDTO() {
-        return new IsLoggedInRequestDTO() {{
-            setEmail("lnahum@gmail.com");
-            setSession("123456789");
-        }};
-    }
-
-
-    @Path("/IsLoggedIn")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public IsLoggedInResponseDTO IsLoggedIn(IsLoggedInRequestDTO request) {
         return service.IsLoggedIn(request);
     }
 
-    @Path("/Login")
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -46,7 +34,7 @@ public class PubSaleService {
         return service.Login(request);
     }
 
-    @Path("/Register")
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -54,22 +42,22 @@ public class PubSaleService {
         return service.Register(request);
     }
 
-    @Path("/CreateAuction")
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public CreateAuctionResponseDTO CreateAuction(CreateAuctionRequestDTO request) {
         return service.CreateAuction(request);
     }
-
-    @Path("GetAuctions")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public List<AuctionDTO> GetAuctions(GetAuctionsRequestDTO request) {
         return service.GetAuctions(request);
     }
-}
 
-/*}
-*/
+
+    public void Close() {
+
+    }*/
+}

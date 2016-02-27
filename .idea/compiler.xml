@@ -25,9 +25,19 @@
         <processorPath useClasspath="true" />
         <module name="DAL" />
       </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="Interfaces" />
+        <module name="WebService" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DAL" target="1.8" />
+      <module name="Interfaces" target="1.5" />
+      <module name="WebService" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
