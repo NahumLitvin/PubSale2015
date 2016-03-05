@@ -1,6 +1,6 @@
 package com.pubsale.dal;
 
-import dto.*;
+import com.pubsale.dto.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

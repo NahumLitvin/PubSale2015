@@ -6,6 +6,14 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Interfaces" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.4" />
+          <element id="library" level="project" name="Maven: com.squareup.retrofit:retrofit:1.9.0" />
+          <element id="library" level="project" name="Maven: com.squareup.retrofit:converter-jackson:1.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.3" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/Interfaces/target/Interfaces-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />

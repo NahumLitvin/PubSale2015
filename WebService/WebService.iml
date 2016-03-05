@@ -12,7 +12,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -23,6 +23,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Jersey-2.2" level="project" />
     <orderEntry type="library" name="javax.json.processing-1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.0.0 - RESTful Web Service" level="application_server_libraries" />
+    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.0.0 - JSON Processing (JSR 353)" level="application_server_libraries" />
     <orderEntry type="library" name="Maven: javax:javaee-api:7.0" level="project" />
     <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.5.0" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
@@ -49,7 +51,11 @@
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
     <orderEntry type="module" module-name="Interfaces" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.0.0 - RESTful Web Service" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.0.0 - JSON Processing (JSR 353)" level="application_server_libraries" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.4" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.retrofit:retrofit:1.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.retrofit:converter-jackson:1.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.3" level="project" />
   </component>
 </module>

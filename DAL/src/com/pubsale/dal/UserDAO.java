@@ -1,9 +1,10 @@
 package com.pubsale.dal;
 
-import dto.RegisterRequestDTO;
+import com.pubsale.dto.RegisterRequestDTO;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -38,6 +39,7 @@ class UserDAO {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "user_id")
     public int getId() {
         return id;

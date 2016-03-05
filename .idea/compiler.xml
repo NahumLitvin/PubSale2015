@@ -30,14 +30,28 @@
         <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="Interfaces" />
+        <module name="Android" />
+      </profile>
+      <profile default="false" name="Annotation profile for WebService" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="WebService" />
       </profile>
+      <profile default="false" name="Annotation profile for Interfaces" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="Interfaces" />
+      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
+      <module name="Android" target="1.5" />
       <module name="DAL" target="1.8" />
-      <module name="Interfaces" target="1.5" />
-      <module name="WebService" target="1.5" />
+      <module name="Interfaces" target="1.8" />
+      <module name="WebService" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

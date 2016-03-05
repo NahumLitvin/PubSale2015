@@ -1,12 +1,11 @@
 package com.pubsale.dal;
 
 import com.pubsale.PasswordHash;
+import com.pubsale.dto.*;
 import com.pubsale.interfaces.IPubSaleService;
-import dto.*;
 import org.jinq.jpa.JinqJPAStreamProvider;
 import org.modelmapper.ModelMapper;
 
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -29,8 +28,6 @@ public class HibernatePubSaleService implements IPubSaleService {
     }
 
     public void Close() {
-        //entityManagerFactory.close();
-        streams = null;
         em.close();
     }
 
@@ -91,8 +88,7 @@ public class HibernatePubSaleService implements IPubSaleService {
             registerUser(request);
             return new RegisterResponseDTO(RegisterStatusDTO.OK);
 
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException | EntityExistsException
-                | IllegalArgumentException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             return new RegisterResponseDTO(RegisterStatusDTO.Exception);

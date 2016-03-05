@@ -1,9 +1,6 @@
 package com.pubsale.dal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "auctions")
@@ -26,6 +23,7 @@ class AuctionDAO {
     }
 
     @Id
+    @GeneratedValue
     @Column
     public int getId() {
         return id;

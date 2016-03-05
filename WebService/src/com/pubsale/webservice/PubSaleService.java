@@ -1,7 +1,7 @@
 package com.pubsale.webservice;
 
 import com.pubsale.dal.HibernatePubSaleService;
-import dto.*;
+import com.pubsale.dto.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Path("/pubsale")
 public class PubSaleService {
-    HibernatePubSaleService service = new HibernatePubSaleService();
+    static HibernatePubSaleService service = new HibernatePubSaleService();
 
     @GET
     @Path("/hi")
@@ -62,7 +62,7 @@ public class PubSaleService {
         return service.CreateAuction(request);
     }
 
-    @Path("GetAuctions")
+    @Path("/GetAuctions")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
