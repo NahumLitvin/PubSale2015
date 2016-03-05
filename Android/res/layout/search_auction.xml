@@ -5,4 +5,18 @@
               android:layout_height="match_parent"
 >
 
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_gravity="center_horizontal"
+            android:inputType="text"
+    />
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lvAllAuctions"
+            android:choiceMode="singleChoice"
+    />
 </LinearLayout>

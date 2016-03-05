@@ -32,70 +32,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09c32a3f-2837-4355-8f4f-393b31c367c1" name="Default" comment="was able to get Login data from webservice from android">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp_okhttp_2_7_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_retrofit_converter_jackson_1_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_retrofit_retrofit_1_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/res/layout/main_menu.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/res/layout/my_auctions.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/res/layout/register.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/res/layout/search_auction.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/AlertFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/Helper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MainMenuActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MyAuctionsActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/SearchActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/client/PubServiceClient.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/AuctionDAO_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/SessionDAO_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/UserDAO_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/AuctionDAO_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/SessionDAO_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/UserDAO_.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/CreateAuctionRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/CreateAuctionResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/IsLoggedInRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/IsLoggedInResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/LoginRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/LoginResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/RegisterRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/RegisterResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Interfaces/src/dto/RegisterStatus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebService/src/com/pubsale/webservice/Hi.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebService/src/com/pubsale/webservice/Test.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/AuctionDAO.class" afterPath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/AuctionDAO.class" />
+    <list default="true" id="09c32a3f-2837-4355-8f4f-393b31c367c1" name="Default" comment="register/login work&#10;started building activities">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/GetAuctionsTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/HibernatePubSaleService.class" afterPath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/HibernatePubSaleService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/HibernatePubSaleServiceTest.class" afterPath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/HibernatePubSaleServiceTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/UserDAO.class" afterPath="$PROJECT_DIR$/DAL/target/classes/com/pubsale/dal/UserDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/DAL_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/DAL_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Interfaces_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Interfaces_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/WebService_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/WebService_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/WebService_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/WebService_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Jersey_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Jersey_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/javax_json_processing_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/javax_json_processing_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/DAL.iml" afterPath="$PROJECT_DIR$/DAL/DAL.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/src/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/DAL/src/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/AuctionDAO.java" afterPath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/AuctionDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/HibernatePubSaleService.java" afterPath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/HibernatePubSaleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/HibernatePubSaleServiceTest.java" afterPath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/HibernatePubSaleServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/UserDAO.java" afterPath="$PROJECT_DIR$/DAL/src/com/pubsale/dal/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/res/layout/my_auctions.xml" afterPath="$PROJECT_DIR$/Android/res/layout/my_auctions.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/res/layout/search_auction.xml" afterPath="$PROJECT_DIR$/Android/res/layout/search_auction.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MainMenuActivity.java" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MainMenuActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/SearchActivity.java" afterPath="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/SearchActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/target/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/DAL/target/classes/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Interfaces/Interfaces.iml" afterPath="$PROJECT_DIR$/Interfaces/Interfaces.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Interfaces/pom.xml" afterPath="$PROJECT_DIR$/Interfaces/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService/WebService.iml" afterPath="$PROJECT_DIR$/WebService/WebService.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService/pom.xml" afterPath="$PROJECT_DIR$/WebService/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebService/src/com/pubsale/webservice/PubSaleService.java" afterPath="$PROJECT_DIR$/WebService/src/com/pubsale/webservice/PubSaleService.java" />
     </list>
     <ignored path="PubSale2015.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,11 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="IPubSaleService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interfaces/src/main/java/com/pubsale/interfaces/IPubSaleService.java">
+      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="70" column="73" selection-start-line="70" selection-start-column="73" selection-end-line="70" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -140,14 +86,31 @@
         <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MainMenuActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
+              <caret line="27" column="82" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
+              <folding>
+                <element signature="e#664#849#0" expanded="true" />
+                <element signature="e#848#849#0" expanded="true" />
+                <element signature="e#894#1083#0" expanded="true" />
+                <element signature="e#1082#1083#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_menu.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Android/res/layout/main_menu.xml">
+      <file leaf-file-name="SearchActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/SearchActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.20547946">
+              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+              <folding>
+                <element signature="e#1341#1349#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_auction.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Android/res/layout/search_auction.xml">
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -159,25 +122,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_auctions.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Android/res/layout/my_auctions.xml">
+      <file leaf-file-name="Handler.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/os/Handler.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-3.0375">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding>
+                <element signature="e#2574#2575#0" expanded="true" />
+              </folding>
             </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/SearchActivity.java">
+      <file leaf-file-name="Looper.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/os/Looper.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.25">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Activity.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/app/Activity.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.25">
+              <caret line="1005" column="0" selection-start-line="1005" selection-start-column="0" selection-end-line="1005" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Instrumentation.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/app/Instrumentation.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.9375">
+              <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
+              <caret line="64" column="71" selection-start-line="64" selection-start-column="71" selection-end-line="64" selection-end-column="71" />
+              <folding>
+                <element signature="e#1105#1644#0" expanded="true" />
+                <element signature="e#1643#1644#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,61 +187,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Android/res/layout/main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1944444">
-              <caret line="10" column="37" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Android/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.9054055">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Android/res/layout/register.xml">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Interfaces.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interfaces/Interfaces.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Fragment" />
         <option value="Activity" />
         <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -266,12 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Interfaces/src/dto/GetAuctionsRequest.java" />
-        <option value="$PROJECT_DIR$/Interfaces/src/dto/IsLoggedInResponse.java" />
-        <option value="$PROJECT_DIR$/WebService/src/com/pubsale/webservice/Service.java" />
-        <option value="$PROJECT_DIR$/Interfaces/src/dto/IsLoggedInRes.java" />
-        <option value="$PROJECT_DIR$/Interfaces/src/dto/IsLoggedInResp.java" />
-        <option value="$PROJECT_DIR$/Interfaces/src/dto/GetAuctionsRequestDTO.java" />
         <option value="$PROJECT_DIR$/WebService/src/example/HelloWorld.java" />
         <option value="$PROJECT_DIR$/WebService/web/WEB-INF/sun-jaxws.xml" />
         <option value="$PROJECT_DIR$/WebService/web/WEB-INF/web.xml" />
@@ -296,9 +239,7 @@
         <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/Register.java" />
         <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/AlertFragment.java" />
         <option value="$PROJECT_DIR$/Android/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/Android/res/layout/register.xml" />
         <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/Helper.java" />
-        <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/LoginActivity.java" />
         <option value="$PROJECT_DIR$/Android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/DAL/src/com/pubsale/dal/AuctionDAO.java" />
         <option value="$PROJECT_DIR$/DAL/src/com/pubsale/dal/UserDAO.java" />
@@ -309,7 +250,6 @@
         <option value="$PROJECT_DIR$/Interfaces/src/main/java/com/pubsale/dto/RegisterStatusDTO.java" />
         <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/client/PubsaleRetroApi.java" />
         <option value="$PROJECT_DIR$/Interfaces/src/main/java/com/pubsale/dto/RegisterRequestDTO.java" />
-        <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java" />
         <option value="$PROJECT_DIR$/Interfaces/src/main/java/com/pubsale/dto/RegisterResponseDTO.java" />
         <option value="$PROJECT_DIR$/Android/pom.xml" />
         <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/client/PubServiceClient.java" />
@@ -317,6 +257,15 @@
         <option value="$PROJECT_DIR$/Interfaces/src/main/java/com/pubsale/interfaces/IPubSaleService.java" />
         <option value="$PROJECT_DIR$/Android/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/Android/res/layout/main_menu.xml" />
+        <option value="$PROJECT_DIR$/Android/res/layout/register.xml" />
+        <option value="$PROJECT_DIR$/Android/res/layout/my_auctions.xml" />
+        <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/LoadingTask.java" />
+        <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/GetAuctionsTask.java" />
+        <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MainMenuActivity.java" />
+        <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java" />
+        <option value="$PROJECT_DIR$/Android/res/layout/search_auction.xml" />
+        <option value="$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/SearchActivity.java" />
       </list>
     </option>
   </component>
@@ -395,6 +344,136 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubSale2015" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubSale2015" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubSale2015" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubSale2015" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pubsale" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubSale2015" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pubsale" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubSale2015" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PubSale2015" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -422,18 +501,18 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="439" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.pubsale.interfaces" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.pubsale.dto" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Nahum\IdeaProjects\PubSale2015\WebService" />
-      <recent name="C:\Users\Nahum\IdeaProjects\PubSale2015\Android\libs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.pubsale.webservice" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.pubsale.interfaces" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nahum\IdeaProjects\PubSale2015\WebService" />
+      <recent name="C:\Users\Nahum\IdeaProjects\PubSale2015\Android\libs" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.Android">
@@ -1256,7 +1335,7 @@
       <workItem from="1457101629383" duration="405000" />
       <workItem from="1457161520907" duration="4076000" />
       <workItem from="1457165656666" duration="3974000" />
-      <workItem from="1457172115256" duration="8421000" />
+      <workItem from="1457172115256" duration="13201000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1456491310288</created>
@@ -1276,7 +1355,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456584282975</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="register/login work&#10;started building activities">
+      <created>1457180580444</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1457180580444</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1312,7 +1397,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79983000" />
+    <option name="totallyTimeSpent" value="84763000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1325,11 +1410,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="2582" height="1402" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32878977" sideWeight="0.50289017" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32627118" sideWeight="0.5064023" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36663914" sideWeight="0.5272654" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32627118" sideWeight="0.4935977" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09703288" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1339,19 +1424,19 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979952" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40593222" sideWeight="0.6646014" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40545005" sideWeight="0.6583801" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32627118" sideWeight="0.4935977" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31874484" sideWeight="0.5898389" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31874484" sideWeight="0.58580595" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32627118" sideWeight="0.4935977" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919005" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32627118" sideWeight="0.51796776" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41040462" sideWeight="0.54522926" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261767" sideWeight="0.51796776" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41040462" sideWeight="0.5136327" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32627118" sideWeight="0.4935977" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32878977" sideWeight="0.49710983" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21387284" sideWeight="0.47914085" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36663914" sideWeight="0.47273457" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18546055" sideWeight="0.40228245" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18003207" sideWeight="0.5977175" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18003207" sideWeight="0.5977175" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32700247" sideWeight="0.4935846" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32878977" sideWeight="0.50289017" order="2" side_tool="true" content_ui="tabs" />
@@ -1371,9 +1456,6 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
-  <component name="UpdateCopyrightCheckinHandler">
-    <option name="UPDATE_COPYRIGHT" value="true" />
-  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -1386,12 +1468,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="1" />
     <MESSAGE value="21" />
     <MESSAGE value="web service works" />
     <MESSAGE value="was able to get Login data from webservice from android" />
-    <option name="LAST_COMMIT_MESSAGE" value="was able to get Login data from webservice from android" />
+    <MESSAGE value="register/login work&#10;started building activities" />
+    <option name="LAST_COMMIT_MESSAGE" value="register/login work&#10;started building activities" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1400,12 +1482,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/DAL/src/com/pubsale/dal/HibernatePubSaleServiceTest.java</url>
           <line>26</line>
           <properties />
@@ -1413,13 +1489,13 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/DAL/src/com/pubsale/dal/HibernatePubSaleService.java</url>
-          <line>86</line>
+          <line>85</line>
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/DAL/src/com/pubsale/dal/HibernatePubSaleService.java</url>
-          <line>139</line>
+          <line>138</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
@@ -1427,7 +1503,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="60" />
+      <option name="time" value="61" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1436,75 +1512,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.875">
-          <caret line="310" column="19" selection-start-line="310" selection-start-column="19" selection-end-line="310" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/widget/Toast.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9125">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/content/ContextWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.875">
-          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/os/AsyncTask.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.875">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/app/AlertDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/Android.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/res/drawable-ldpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.558824">
-          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="66" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/AlertFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/jinq/jinq-jpa/1.8.9/jinq-jpa-1.8.9-sources.jar!/org/jinq/jpa/transform/MetamodelUtilFromMetamodel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1664,27 +1671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-          <folding>
-            <element signature="e#1044#1583#0" expanded="true" />
-            <element signature="e#1582#1583#0" expanded="true" />
-            <element signature="e#1853#2045#0" expanded="true" />
-            <element signature="e#2044#2045#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DAL/src/com/pubsale/dal/HibernatePubSaleService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1712,16 +1698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/client/PubServiceClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Android/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.441176">
@@ -1743,8 +1719,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
           <folding>
-            <element signature="e#1375#1376#0" expanded="true" />
-            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="e#1375#1376#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1773,46 +1749,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MainMenuActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Android/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.9054055">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/SearchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MyAuctionsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Android/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1944444">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="37" />
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.441176">
+          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
@@ -1827,26 +1779,176 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Android/res/layout/my_auctions.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Android/res/layout/register.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/client/PubServiceClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interfaces/src/main/java/com/pubsale/dto/GetAuctionsRequestDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/AlertFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/os/AsyncTask.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/GetAuctionsTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#433#434#0" expanded="false" />
+            <element signature="e#465#466#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/res/layout/my_auctions.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/widget/ArrayAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8875">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding>
+            <element signature="e#1166#1167#0" expanded="true" />
+            <element signature="e#1217#1218#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MainMenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="82" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
+          <folding>
+            <element signature="e#664#849#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#894#1083#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="73" selection-start-line="70" selection-start-column="73" selection-end-line="70" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/os/Handler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0375">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#2574#2575#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/os/Looper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.25">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.25">
+          <caret line="1005" column="0" selection-start-line="1005" selection-start-column="0" selection-end-line="1005" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Android/Sdk/platforms/android-23/android.jar!/android/app/Instrumentation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.9375">
+          <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/RegisterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="71" selection-start-line="64" selection-start-column="71" selection-end-line="64" selection-end-column="71" />
+          <folding>
+            <element signature="e#1105#1644#0" expanded="true" />
+            <element signature="e#1643#1644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/MyAuctionsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/res/layout/search_auction.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Android/src/main/java/com/pubsale/app/SearchActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20547946">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+          <folding>
+            <element signature="e#1341#1349#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

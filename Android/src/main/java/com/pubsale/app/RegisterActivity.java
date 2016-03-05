@@ -62,7 +62,7 @@ public class RegisterActivity extends Activity {
 
 
             if (response == null) {
-                Toast.makeText(RegisterActivity.this, "Connection Error Error!", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "Connection Error!", Toast.LENGTH_LONG).show();
                 return;
             }
 
