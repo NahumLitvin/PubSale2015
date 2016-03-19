@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:id="@+id/create_auction_layout"
+             tools:context="com.pubsale.app.CreateAuctionActivity"
+>
+
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name"
+                android:id="@+id/textView"
+                android:layout_column="0"
+        />
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_item_name"
+                android:layout_column="1"
+                android:inputType="text"
+                android:maxLength="20"
+                android:hint="@string/max_chars_20"
+        />
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/auction_end"
+                android:id="@+id/txt_auction_name"
+                android:layout_column="0"
+        />
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/et_auction_end"
+                android:layout_column="1"
+                android:hint="@string/auction_end"
+                style="@android:style/Widget.Holo.Spinner"
+        />
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/staring_price"
+                android:id="@+id/txt_staring_price"
+                android:layout_column="0"
+        />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/et_starting_price"
+                android:layout_column="1"
+                android:hint="@string/min_price"
+        />
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <CheckBox
+                android:layout_width="184dp"
+                android:layout_height="wrap_content"
+                android:text="@string/immediate_buy"
+                android:id="@+id/cb_immediate_buy"
+                android:layout_column="0"
+                android:checked="false"
+                android:editable="true"
+        />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/et_immediate_buy_price"
+                android:layout_column="1"
+                android:hint="@string/max_price"
+        />
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:id="@+id/txtCategory"
+                android:layout_column="0"
+        />
+
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/sp_category"
+                android:layout_column="1"
+        />
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:id="@+id/txtDescription"
+                android:layout_column="0"
+        />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/et_description"
+                android:layout_column="1"
+                android:maxLength="200"
+                android:hint="@string/max_chars_200"
+        />
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iamge"
+                android:id="@+id/txtImage"
+                android:layout_column="0"
+        />
+
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iw_auction"
+                android:layout_column="1"
+                android:clickable="true"
+        />
+    </TableRow>
+
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/create_auction"
+                android:id="@+id/btn_create_auction"
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+        />
+    </TableRow>
+
+</TableLayout>

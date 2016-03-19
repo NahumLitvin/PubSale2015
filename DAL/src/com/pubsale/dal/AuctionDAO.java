@@ -1,7 +1,6 @@
 package com.pubsale.dal;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity(name = "auctions")
 class AuctionDAO {
@@ -11,12 +10,12 @@ class AuctionDAO {
     private String photo;
     private int startPrice;
     private int endPrice;
-    private Date startDate;
-    private Date endDate;
+    private long startUnixTime;
+    private long endUnixTime;
     private UserDAO seller;
     private int topBidSum;
     private UserDAO topBidder;
-
+    private CategoryDAO category;
 
     public AuctionDAO() {
         // TODO Auto-generated constructor stub
@@ -79,21 +78,21 @@ class AuctionDAO {
     }
 
     @Column
-    public Date getStartDate() {
-        return startDate;
+    public long getStartUnixTime() {
+        return startUnixTime;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setStartUnixTime(long startUnixTime) {
+        this.startUnixTime = startUnixTime;
     }
 
     @Column
-    public Date getEndDate() {
-        return endDate;
+    public long getEndUnixTime() {
+        return endUnixTime;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setEndUnixTime(long endUnixTime) {
+        this.endUnixTime = endUnixTime;
     }
 
     @OneToOne
@@ -124,4 +123,12 @@ class AuctionDAO {
         this.topBidSum = topBidSum;
     }
 
+    @OneToOne
+    public CategoryDAO getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryDAO category) {
+        this.category = category;
+    }
 }

@@ -40,7 +40,7 @@ public class HibernatePubSaleService implements IPubSaleService {
 
         if (!session.isPresent())
             return new IsLoggedInResponseDTO() {{
-                setLoggedIn(true);
+                setLoggedIn(false);
             }};
 
         boolean IsEmailOK = Objects.equals(request.getEmail(), session.get().getUser().getEmail());
@@ -97,14 +97,22 @@ public class HibernatePubSaleService implements IPubSaleService {
     }
 
     @Override
-    public CreateAuctionResponseDTO CreateAuction(CreateAuctionRequestDTO request) {
+    public IsActionSuccededDTO CreateAuction(CreateAuctionRequestDTO request) {
         if (!IsLoggedIn(request.getIsLoggedIn()).isLoggedIn())
-            return new CreateAuctionResponseDTO(false, "not logged in");
-        em.getTransaction().begin();
-        AuctionDAO auction = modelMapper.map(request.getAuction(), AuctionDAO.class);
-        em.persist(auction);
-        em.getTransaction().commit();
-        return null;
+            return new IsActionSuccededDTO(false, "not logged in");
+
+
+        try {
+            em.getTransaction().begin();
+            AuctionDAO auction = modelMapper.map(request.getAuction(), AuctionDAO.class);
+            auction.setSeller(getUser(request.getIsLoggedIn().getEmail()).get());
+            em.persist(auction);
+            em.getTransaction().commit();
+        } catch (Exception ex) {
+            return new IsActionSuccededDTO(false, ex.getMessage());
+        }
+
+        return new IsActionSuccededDTO(true, "");
     }
 
     @Override
@@ -131,11 +139,13 @@ public class HibernatePubSaleService implements IPubSaleService {
     }
 
     private Boolean isUserRegistered(RegisterRequestDTO request) {
-        String email = request.getEmail();
+        return getUser(request.getEmail()).isPresent();
+    }
+
+    private Optional<UserDAO> getUser(String email) {
         Optional<UserDAO> user = streams.streamAll(em, UserDAO.class).where(x -> (Objects.equals(x.getEmail(), email)))
                 .findOne();
-
-        return user.isPresent();
+        return user;
     }
 
 

@@ -58,7 +58,7 @@ public class PubSaleService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public CreateAuctionResponseDTO CreateAuction(CreateAuctionRequestDTO request) {
+    public IsActionSuccededDTO CreateAuction(CreateAuctionRequestDTO request) {
         return service.CreateAuction(request);
     }
 

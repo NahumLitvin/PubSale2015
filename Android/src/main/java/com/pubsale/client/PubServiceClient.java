@@ -71,7 +71,7 @@ public class PubServiceClient implements IPubSaleService {
     }
 
 
-    public CreateAuctionResponseDTO CreateAuction(CreateAuctionRequestDTO request) {
+    public IsActionSuccededDTO CreateAuction(CreateAuctionRequestDTO request) {
         try {
             return service.CreateAuction(request);
         } catch (Exception e) {
