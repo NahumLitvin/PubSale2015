@@ -5,10 +5,12 @@ import com.pubsale.dto.*;
 import com.pubsale.interfaces.IPubSaleService;
 import org.jinq.jpa.JinqJPAStreamProvider;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.lang.reflect.Type;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.*;
@@ -117,7 +119,19 @@ public class HibernatePubSaleService implements IPubSaleService {
 
     @Override
     public List<AuctionDTO> GetAuctions(GetAuctionsRequestDTO request) {
-        return null;
+        List<AuctionDAO> list = streams.streamAll(em, AuctionDAO.class).toList();
+        Type listType = new TypeToken<List<AuctionDTO>>() {
+        }.getType();
+        return modelMapper.map(list, listType);
+    }
+
+    @Override
+    public List<CategoryDTO> GetCategories() {
+
+        List<CategoryDAO> list = streams.streamAll(em, CategoryDAO.class).toList();
+        Type listType = new TypeToken<List<CategoryDTO>>() {
+        }.getType();
+        return modelMapper.map(list, listType);
     }
 
     private void registerUser(RegisterRequestDTO request) throws NoSuchAlgorithmException, InvalidKeySpecException {

@@ -65,7 +65,7 @@ public class PubServiceClient implements IPubSaleService {
             return service.Register(request);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("Register", e.getMessage());
+            Log.e("Register", "" + e.getMessage());
         }
         return null;
     }
@@ -76,7 +76,7 @@ public class PubServiceClient implements IPubSaleService {
             return service.CreateAuction(request);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("CreateAuction", e.getMessage());
+            Log.e("CreateAuction", "" + e.getMessage());
         }
         return null;
     }
@@ -88,6 +88,16 @@ public class PubServiceClient implements IPubSaleService {
         } catch (Exception e) {
             e.printStackTrace();
             Log.e("GetAuctions", e.getMessage());
+        }
+        return null;
+    }
+
+    public List<CategoryDTO> GetCategories() {
+        try {
+            return service.GetCategories();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("GetCategories", e.getMessage());
         }
         return null;
     }

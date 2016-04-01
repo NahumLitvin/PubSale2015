@@ -20,10 +20,7 @@ import android.view.View;
 import android.widget.*;
 import com.example.pubsale2015.R;
 import com.pubsale.client.PubServiceClient;
-import com.pubsale.dto.AuctionDTO;
-import com.pubsale.dto.CreateAuctionRequestDTO;
-import com.pubsale.dto.IsActionSuccededDTO;
-import com.pubsale.dto.IsLoggedInRequestDTO;
+import com.pubsale.dto.*;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -44,12 +41,12 @@ public class CreateAuctionActivity extends Activity {
     private CheckBox isImmediateBuy;
     private EditText immediateBuyPrice;
     private Spinner category;
+    private ArrayAdapter<CategoryDTO> categoryAdapter;
     private EditText description;
     private ImageButton image;
     private DatePickerDialog toDatePickerDialog;
     private Button createAuction;
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-    ;
     private Uri outputFileUri;
 
     private static String getImageFromPath(String path) {
@@ -93,6 +90,9 @@ public class CreateAuctionActivity extends Activity {
         setContentView(R.layout.create_auction);
 
         findViewsById();
+
+        new GetCategories().execute();
+
         setDatePickerOnAuctionEndControl();
 
         image.setOnClickListener(new View.OnClickListener() {
@@ -311,6 +311,21 @@ public class CreateAuctionActivity extends Activity {
             }
             startActivity(new Intent(CreateAuctionActivity.this, MyAuctionsActivity.class));
 
+        }
+    }
+
+    private class GetCategories extends AsyncTask<Void, Void, List<CategoryDTO>> {
+
+        @Override
+        protected List<CategoryDTO> doInBackground(Void... voids) {
+            return PubServiceClient.getInstance().GetCategories();
+        }
+
+        @Override
+        protected void onPostExecute(List<CategoryDTO> response) {
+            categoryAdapter = new ArrayAdapter<CategoryDTO>(CreateAuctionActivity.this,
+                    android.R.layout.simple_spinner_item, response);
+            category.setAdapter(categoryAdapter);
         }
     }
 
