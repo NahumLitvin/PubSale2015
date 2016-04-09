@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context="com.pubsale.app.SearchActivity"
-            android:id="@+id/search_layout"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="com.pubsale.app.SearchActivity"
+              android:id="@+id/search_layout"
+              android:orientation="vertical"
 >
 
-    <EditText
-            android:layout_width="292dp"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+    >
+
+        <EditText
+
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/search_auction"
+                android:layout_gravity="center_horizontal"
+                android:inputType="text"
+                android:hint="@string/search_auction"
+                android:layout_weight="1"
+
+        />
+
+        <fragment
+                android:name="com.pubsale.app.CategoriesFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_category"
+
+                tools:layout="@android:layout/simple_spinner_item"
+                android:layout_weight="1"
+        />
+    </LinearLayout>
+
+
+    <SearchView
+            android:layout_width="148dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_gravity="center_horizontal"
-            android:inputType="text"
-            android:hint="@string/search_auction"
-            android:layout_row="1"
-            android:layout_column="0"
+            android:id="@+id/searchView"
     />
 
     <fragment
-            android:name="com.pubsale.app.CategoriesFragment"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:id="@+id/sp_category"
-            android:layout_column="1"
-            tools:layout="@layout/categories_fragment"
-            android:layout_row="1"
+            android:name="com.pubsale.app.AuctionsFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/auctions_fragment"
+            tools:layout="@android:layout/list_content"
+            android:layout_weight="1"
     />
 
-    <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lvAllAuctions"
-            android:choiceMode="singleChoice"
-            android:layout_row="2"
-            android:layout_column="0"
-    />
-</GridLayout>
+</LinearLayout>

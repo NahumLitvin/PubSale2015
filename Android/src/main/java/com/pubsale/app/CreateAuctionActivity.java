@@ -16,6 +16,7 @@ import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.text.InputType;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.example.pubsale2015.R;
@@ -43,8 +44,6 @@ public class CreateAuctionActivity extends Activity {
     private EditText startingPrice;
     private CheckBox isImmediateBuy;
     private EditText immediateBuyPrice;
-    //private Spinner category;
-    //private ArrayAdapter<CategoryDTO> categoryAdapter;
     private EditText description;
     private ImageButton image;
     private DatePickerDialog toDatePickerDialog;
@@ -158,6 +157,8 @@ public class CreateAuctionActivity extends Activity {
 
                 dto.setStartPrice(starting_price);
                 dto.setEndPrice(max_price);
+                Log.e("", (String.valueOf(categoriesFragment == null)));
+                Log.e("", (String.valueOf(categoriesFragment.getSelectedCategory() == null)));
                 dto.setCategory(categoriesFragment.getSelectedCategory());
                 dto.setDescription(description.getText().toString());
                 try {
@@ -212,11 +213,10 @@ public class CreateAuctionActivity extends Activity {
         startingPrice = (EditText) findViewById(R.id.et_starting_price);
         isImmediateBuy = (CheckBox) findViewById(R.id.cb_immediate_buy);
         immediateBuyPrice = (EditText) findViewById(R.id.et_immediate_buy_price);
-        //category = (Spinner) findViewById(R.id.sp_category);
         description = (EditText) findViewById(R.id.et_description);
         image = (ImageButton) findViewById(R.id.iw_auction);
         createAuction = (Button) findViewById(R.id.btn_create_auction);
-        categoriesFragment = (CategoriesFragment) getFragmentManager().findFragmentById(R.id.sp_category_fragment);
+        categoriesFragment = (CategoriesFragment) getFragmentManager().findFragmentById(R.id.sp_category);
     }
 
     private void openImageIntent() throws IOException {

@@ -1,35 +1,48 @@
 package com.pubsale.app;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.EditText;
 import com.example.pubsale2015.R;
-
-import java.util.ArrayList;
+import com.pubsale.dto.GetAuctionsRequestDTO;
 
 /**
  * Created by Nahum on 05/03/2016.
  */
 public class SearchActivity extends Activity {
+    AuctionsFragment auctionsFragment;
+    CategoriesFragment categoriesFragment;
+    EditText searchAuction;
+    GetAuctionsRequestDTO req = new GetAuctionsRequestDTO();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_auction);
+        searchAuction = (EditText) findViewById(R.id.search_auction);
+        categoriesFragment = (CategoriesFragment) getFragmentManager().findFragmentById(R.id.sp_category);
+        req.setBuyerEmail(Helper.GetIsLoggedInRequest(this).getEmail());
+        searchAuction.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
-        final ListView listview = (ListView) findViewById(R.id.lvAllAuctions);
-        String[] values = new String[]{"Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-                "Android", "iPhone", "WindowsMobile"};
 
-        final ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < values.length; ++i) {
-            list.add(values[i]);
-        }
-        final ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-        listview.setAdapter(adapter);
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+
+                    req.setCategory(categoriesFragment.getSelectedCategory());
+                    req.setFreeText(searchAuction.getText().toString());
+
+                    auctionsFragment.search(req);
+                }
+            }
+        });
+
+
+        GetAuctionsRequestDTO request = new GetAuctionsRequestDTO();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        auctionsFragment = AuctionsFragment.newInstance(request, this);
+        ft.replace(R.id.auctions_fragment, auctionsFragment);
+        ft.commit();
     }
 
 

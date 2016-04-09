@@ -3,6 +3,7 @@ package com.pubsale.dal;
 import com.pubsale.PasswordHash;
 import com.pubsale.dto.*;
 import com.pubsale.interfaces.IPubSaleService;
+import org.jinq.jpa.JPAJinqStream;
 import org.jinq.jpa.JinqJPAStreamProvider;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -119,10 +120,25 @@ public class HibernatePubSaleService implements IPubSaleService {
 
     @Override
     public List<AuctionDTO> GetAuctions(GetAuctionsRequestDTO request) {
-        List<AuctionDAO> list = streams.streamAll(em, AuctionDAO.class).toList();
+
+        JPAJinqStream<AuctionDAO> stream = streams.streamAll(em, AuctionDAO.class);
+        String freeText = request.getFreeText();
+        if (freeText != null)
+            stream = stream.where(x -> x.getName().contains(freeText) || x.getDescription().contains(freeText));
+        String sellerEmail = request.getSellerEmail();
+        if (sellerEmail != null)
+            stream = stream.where(x -> x.getSeller().getEmail().equals(sellerEmail));
+        Integer category = request.getCategory().getId();
+        if (category != null)
+            stream = stream.where(x -> x.getCategory().getId() == category);
+
+
+
+
         Type listType = new TypeToken<List<AuctionDTO>>() {
         }.getType();
-        return modelMapper.map(list, listType);
+
+        return modelMapper.map(stream.toList(), listType);
     }
 
     @Override
