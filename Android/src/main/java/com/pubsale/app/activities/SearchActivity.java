@@ -1,4 +1,4 @@
-package com.pubsale.app;
+package com.pubsale.app.activities;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import com.example.pubsale2015.R;
+import com.pubsale.app.Helper;
+import com.pubsale.app.fragments.AuctionsFragment;
+import com.pubsale.app.fragments.CategoriesFragment;
 import com.pubsale.dto.GetAuctionsRequestDTO;
 
 /**

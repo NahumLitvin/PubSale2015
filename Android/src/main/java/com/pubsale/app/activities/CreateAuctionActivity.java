@@ -1,4 +1,4 @@
-package com.pubsale.app;
+package com.pubsale.app.activities;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.example.pubsale2015.R;
+import com.pubsale.app.fragments.CategoriesFragment;
 import com.pubsale.client.PubServiceClient;
 import com.pubsale.dto.AuctionDTO;
 import com.pubsale.dto.CreateAuctionRequestDTO;

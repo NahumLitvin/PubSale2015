@@ -4,7 +4,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:id="@+id/create_auction_layout"
-             tools:context="com.pubsale.app.CreateAuctionActivity"
+             tools:context="com.pubsale.app.activities.CreateAuctionActivity"
 >
 
 
@@ -127,7 +127,7 @@
                 android:layout_column="1"
         />-->
         <fragment
-                android:name="com.pubsale.app.CategoriesFragment"
+                android:name="com.pubsale.app.fragments.CategoriesFragment"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:id="@+id/sp_category"

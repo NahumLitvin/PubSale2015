@@ -1,4 +1,4 @@
-package com.pubsale.app;
+package com.pubsale.app.fragments;
 
 import android.app.Activity;
 import android.app.ListFragment;
@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import com.example.pubsale2015.R;
+import com.pubsale.app.AuctionAdapter;
 import com.pubsale.client.PubServiceClient;
 import com.pubsale.dto.AuctionDTO;
 import com.pubsale.dto.GetAuctionsRequestDTO;
@@ -83,8 +83,9 @@ public class AuctionsFragment extends ListFragment implements AdapterView.OnItem
         @Override
         protected void onPostExecute(List<AuctionDTO> response) {
             if (response != null) {
-                setListAdapter(new ArrayAdapter<AuctionDTO>(getActivity(),
-                        android.R.layout.simple_list_item_1, response));
+                AuctionDTO[] array = new AuctionDTO[response.size()];
+                response.toArray(array); // fill the array
+                setListAdapter(new AuctionAdapter(getActivity(), array));
             }
         }
     }

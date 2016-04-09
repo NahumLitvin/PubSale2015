@@ -128,17 +128,17 @@ public class HibernatePubSaleService implements IPubSaleService {
         String sellerEmail = request.getSellerEmail();
         if (sellerEmail != null)
             stream = stream.where(x -> x.getSeller().getEmail().equals(sellerEmail));
-        Integer category = request.getCategory().getId();
-        if (category != null)
-            stream = stream.where(x -> x.getCategory().getId() == category);
+        CategoryDTO category = request.getCategory();
+        if (category != null) {
 
 
-
-
+            Integer id = category.getId();
+            stream = stream.where(x -> x.getCategory().getId() == id);
+        }
         Type listType = new TypeToken<List<AuctionDTO>>() {
         }.getType();
 
-        return modelMapper.map(stream.toList(), listType);
+        return modelMapper.map(stream.sortedDescendingBy(x -> x.getEndUnixTime()).toList(), listType);
     }
 
     @Override

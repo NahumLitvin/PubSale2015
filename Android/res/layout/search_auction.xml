@@ -3,7 +3,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context="com.pubsale.app.SearchActivity"
+              tools:context="com.pubsale.app.activities.SearchActivity"
               android:id="@+id/search_layout"
               android:orientation="vertical"
 >
@@ -28,7 +28,7 @@
         />
 
         <fragment
-                android:name="com.pubsale.app.CategoriesFragment"
+                android:name="com.pubsale.app.fragments.CategoriesFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/sp_category"
@@ -46,7 +46,7 @@
     />
 
     <fragment
-            android:name="com.pubsale.app.AuctionsFragment"
+            android:name="com.pubsale.app.fragments.AuctionsFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/auctions_fragment"

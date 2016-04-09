@@ -1,4 +1,4 @@
-package com.pubsale.app;
+package com.pubsale.app.activities;
 
 import android.app.Activity;
 import android.content.Intent;

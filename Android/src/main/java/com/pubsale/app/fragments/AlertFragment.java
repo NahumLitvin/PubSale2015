@@ -1,4 +1,4 @@
-package com.pubsale.app;
+package com.pubsale.app.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
