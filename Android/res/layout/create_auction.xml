@@ -120,11 +120,19 @@
                 android:layout_column="0"
         />
 
-        <Spinner
+        <!--<Spinner
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:id="@+id/sp_category"
                 android:layout_column="1"
+        />-->
+        <fragment
+                android:name="com.pubsale.app.CategoriesFragment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/sp_category"
+                android:layout_column="1"
+                tools:layout="@layout/categories_fragment"
         />
     </TableRow>
 

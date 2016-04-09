@@ -20,7 +20,10 @@ import android.view.View;
 import android.widget.*;
 import com.example.pubsale2015.R;
 import com.pubsale.client.PubServiceClient;
-import com.pubsale.dto.*;
+import com.pubsale.dto.AuctionDTO;
+import com.pubsale.dto.CreateAuctionRequestDTO;
+import com.pubsale.dto.IsActionSuccededDTO;
+import com.pubsale.dto.IsLoggedInRequestDTO;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -40,15 +43,15 @@ public class CreateAuctionActivity extends Activity {
     private EditText startingPrice;
     private CheckBox isImmediateBuy;
     private EditText immediateBuyPrice;
-    private Spinner category;
-    private ArrayAdapter<CategoryDTO> categoryAdapter;
+    //private Spinner category;
+    //private ArrayAdapter<CategoryDTO> categoryAdapter;
     private EditText description;
     private ImageButton image;
     private DatePickerDialog toDatePickerDialog;
     private Button createAuction;
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
     private Uri outputFileUri;
-
+    private CategoriesFragment categoriesFragment;
     private static String getImageFromPath(String path) {
         if (path == null) return null;
         InputStream inputStream;//You can get an inputStream using any IO API
@@ -90,8 +93,6 @@ public class CreateAuctionActivity extends Activity {
         setContentView(R.layout.create_auction);
 
         findViewsById();
-
-        new GetCategories().execute();
 
         setDatePickerOnAuctionEndControl();
 
@@ -157,7 +158,7 @@ public class CreateAuctionActivity extends Activity {
 
                 dto.setStartPrice(starting_price);
                 dto.setEndPrice(max_price);
-
+                dto.setCategory(categoriesFragment.getSelectedCategory());
                 dto.setDescription(description.getText().toString());
                 try {
                     dto.setImage(getImageFromPath(outputFileUri.toString()));
@@ -211,10 +212,11 @@ public class CreateAuctionActivity extends Activity {
         startingPrice = (EditText) findViewById(R.id.et_starting_price);
         isImmediateBuy = (CheckBox) findViewById(R.id.cb_immediate_buy);
         immediateBuyPrice = (EditText) findViewById(R.id.et_immediate_buy_price);
-        category = (Spinner) findViewById(R.id.sp_category);
+        //category = (Spinner) findViewById(R.id.sp_category);
         description = (EditText) findViewById(R.id.et_description);
         image = (ImageButton) findViewById(R.id.iw_auction);
         createAuction = (Button) findViewById(R.id.btn_create_auction);
+        categoriesFragment = (CategoriesFragment) getFragmentManager().findFragmentById(R.id.sp_category_fragment);
     }
 
     private void openImageIntent() throws IOException {
@@ -314,19 +316,5 @@ public class CreateAuctionActivity extends Activity {
         }
     }
 
-    private class GetCategories extends AsyncTask<Void, Void, List<CategoryDTO>> {
-
-        @Override
-        protected List<CategoryDTO> doInBackground(Void... voids) {
-            return PubServiceClient.getInstance().GetCategories();
-        }
-
-        @Override
-        protected void onPostExecute(List<CategoryDTO> response) {
-            categoryAdapter = new ArrayAdapter<CategoryDTO>(CreateAuctionActivity.this,
-                    android.R.layout.simple_spinner_item, response);
-            category.setAdapter(categoryAdapter);
-        }
-    }
 
 }

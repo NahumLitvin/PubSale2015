@@ -28,9 +28,6 @@ public class MyAuctionsActivity extends Activity {
         setContentView(R.layout.my_auctions);
         final Button btnSearchAuctions = (Button) findViewById(R.id.btnCreateAuction);
         auctions = (ListView) findViewById(R.id.lv_my_auctions);
-        if (auctions == null) {
-            Log.e("wtf?", "wtf?");
-        }
         btnSearchAuctions.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(MyAuctionsActivity.this, CreateAuctionActivity.class));
