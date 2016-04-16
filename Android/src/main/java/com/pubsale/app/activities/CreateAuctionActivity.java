@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,11 +16,11 @@ import android.os.Environment;
 import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.text.InputType;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.example.pubsale2015.R;
+import com.pubsale.app.Helper;
 import com.pubsale.app.fragments.CategoriesFragment;
 import com.pubsale.client.PubServiceClient;
 import com.pubsale.dto.AuctionDTO;
@@ -27,7 +28,8 @@ import com.pubsale.dto.CreateAuctionRequestDTO;
 import com.pubsale.dto.IsActionSuccededDTO;
 import com.pubsale.dto.IsLoggedInRequestDTO;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -52,29 +54,7 @@ public class CreateAuctionActivity extends Activity {
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
     private Uri outputFileUri;
     private CategoriesFragment categoriesFragment;
-    private static String getImageFromPath(String path) {
-        if (path == null) return null;
-        InputStream inputStream;//You can get an inputStream using any IO API
-        try {
-            inputStream = new FileInputStream(path);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
-        byte[] bytes;
-        byte[] buffer = new byte[8192];
-        int bytesRead;
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        try {
-            while ((bytesRead = inputStream.read(buffer)) != -1) {
-                output.write(buffer, 0, bytesRead);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        bytes = output.toByteArray();
-        return Base64.encodeToString(bytes, Base64.DEFAULT);
-    }
+
 
     private static java.util.Date getDateFromDatePicker(DatePicker datePicker) {
         int day = datePicker.getDayOfMonth();
@@ -86,6 +66,7 @@ public class CreateAuctionActivity extends Activity {
 
         return calendar.getTime();
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -156,16 +137,17 @@ public class CreateAuctionActivity extends Activity {
                 dto.setStartUnixTime(System.currentTimeMillis() / 1000L);
                 dto.setEndUnixTime(getDateFromDatePicker(toDatePickerDialog.getDatePicker()).getTime() / 1000L);
 
-                dto.setStartPrice(starting_price);
+                dto.setCurrentPrice(starting_price);
                 dto.setEndPrice(max_price);
                 Log.e("", (String.valueOf(categoriesFragment == null)));
                 Log.e("", (String.valueOf(categoriesFragment.getSelectedCategory() == null)));
                 dto.setCategory(categoriesFragment.getSelectedCategory());
                 dto.setDescription(description.getText().toString());
                 try {
-                    dto.setImage(getImageFromPath(outputFileUri.toString()));
-                } catch (NullPointerException ex) {
-                    //ignore
+                    Log.i("", outputFileUri.toString());
+                    dto.setPhoto(Helper.ByteArrayFromBitmap(((BitmapDrawable) image.getDrawable()).getBitmap()));
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
 
 

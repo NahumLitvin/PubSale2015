@@ -39,12 +39,6 @@
     </LinearLayout>
 
 
-    <SearchView
-            android:layout_width="148dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/searchView"
-    />
-
     <fragment
             android:name="com.pubsale.app.fragments.AuctionsFragment"
             android:layout_width="wrap_content"

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import com.example.pubsale2015.R;
@@ -33,6 +34,12 @@ public class CategoriesFragment extends Fragment {
     public CategoryDTO getSelectedCategory() {
         return (CategoryDTO) category.getSelectedItem();
     }
+
+    public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener onSelected) {
+        category.setOnItemSelectedListener(onSelected);
+    }
+
+
 
 
     private class GetCategories extends AsyncTask<Void, Void, List<CategoryDTO>> {

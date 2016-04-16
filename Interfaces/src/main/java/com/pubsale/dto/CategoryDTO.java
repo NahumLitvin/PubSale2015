@@ -13,6 +13,7 @@ public class CategoryDTO implements Serializable {
 
     public CategoryDTO() {
         // TODO Auto-generated constructor stub
+        name = "";
     }
 
     public int getId() {

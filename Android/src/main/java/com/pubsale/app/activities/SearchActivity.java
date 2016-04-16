@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import com.example.pubsale2015.R;
 import com.pubsale.app.Helper;
@@ -32,11 +33,19 @@ public class SearchActivity extends Activity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
 
-                    req.setCategory(categoriesFragment.getSelectedCategory());
-                    req.setFreeText(searchAuction.getText().toString());
-
-                    auctionsFragment.search(req);
+                    Search();
                 }
+            }
+        });
+
+        categoriesFragment.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Search();
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+                Search();
             }
         });
 
@@ -46,6 +55,13 @@ public class SearchActivity extends Activity {
         auctionsFragment = AuctionsFragment.newInstance(request, this);
         ft.replace(R.id.auctions_fragment, auctionsFragment);
         ft.commit();
+    }
+
+    private void Search() {
+        req.setCategory(categoriesFragment.getSelectedCategory());
+        req.setFreeText(searchAuction.getText().toString());
+
+        auctionsFragment.search(req);
     }
 
 

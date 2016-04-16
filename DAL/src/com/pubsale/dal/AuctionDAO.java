@@ -7,7 +7,7 @@ class AuctionDAO {
     private int id;
     private String name;
     private String description;
-    private String photo;
+    private byte[] photo;
     private int startPrice;
     private int endPrice;
     private long startUnixTime;
@@ -49,13 +49,13 @@ class AuctionDAO {
     public void setDescription(String description) {
         this.description = description;
     }
-
     @Column
-    public String getPhoto() {
+    @Lob
+    public byte[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
 

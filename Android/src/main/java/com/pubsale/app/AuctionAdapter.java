@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.pubsale2015.R;
 import com.pubsale.dto.AuctionDTO;
@@ -48,8 +49,17 @@ public class AuctionAdapter extends BaseAdapter {
         View vi = convertView;
         if (vi == null)
             vi = inflater.inflate(R.layout.auction_row, null);
-        TextView text = (TextView) vi.findViewById(R.id.text);
-        text.setText(auctions[position].getName());
+        TextView prodcutname = (TextView) vi.findViewById(R.id.auction_row_txtProductName);
+        TextView category = (TextView) vi.findViewById(R.id.auction_row_txtProductCategory);
+        TextView enddate = (TextView) vi.findViewById(R.id.auction_row_txtEndDate);
+        ImageView image = (ImageView) vi.findViewById(R.id.auction_row_imgImage);
+        TextView price = (TextView) vi.findViewById(R.id.auction_row_txtProductPrice);
+
+        prodcutname.setText(auctions[position].getName());
+        category.setText(auctions[position].getCategory().getName());
+        enddate.setText(new java.util.Date(auctions[position].getEndUnixTime() * 1000).toString());
+        image.setImageBitmap(Helper.ByteArrayToBitmap(auctions[position].getPhoto()));
+        price.setText(String.valueOf(auctions[position].getCurrentPrice()));
         return vi;
     }
 }

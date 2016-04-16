@@ -26,12 +26,6 @@ public class PubServiceClient implements IPubSaleService {
 
         service = restAdapter.
                 create(IPubSaleService.class);
-        //creating a service for adapter with our GET class
-
-        //Now ,we need to call for response
-        //Retrofit using gson for JSON-POJO conversion
-
-
     }
 
     public static PubServiceClient getInstance() {

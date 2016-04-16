@@ -123,15 +123,14 @@ public class HibernatePubSaleService implements IPubSaleService {
 
         JPAJinqStream<AuctionDAO> stream = streams.streamAll(em, AuctionDAO.class);
         String freeText = request.getFreeText();
-        if (freeText != null)
+        if (freeText != null && !freeText.isEmpty())
             stream = stream.where(x -> x.getName().contains(freeText) || x.getDescription().contains(freeText));
         String sellerEmail = request.getSellerEmail();
-        if (sellerEmail != null)
+        if (sellerEmail != null && !sellerEmail.isEmpty())
             stream = stream.where(x -> x.getSeller().getEmail().equals(sellerEmail));
+
         CategoryDTO category = request.getCategory();
         if (category != null) {
-
-
             Integer id = category.getId();
             stream = stream.where(x -> x.getCategory().getId() == id);
         }
