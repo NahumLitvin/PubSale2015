@@ -8,7 +8,7 @@ class AuctionDAO {
     private String name;
     private String description;
     private byte[] photo;
-    private int startPrice;
+    private int currentPrice;
     private int endPrice;
     private long startUnixTime;
     private long endUnixTime;
@@ -60,12 +60,12 @@ class AuctionDAO {
     }
 
     @Column
-    public int getStartPrice() {
-        return startPrice;
+    public int getCurrentPrice() {
+        return currentPrice;
     }
 
-    public void setStartPrice(int startPrice) {
-        this.startPrice = startPrice;
+    public void setCurrentPrice(int currentPrice) {
+        this.currentPrice = currentPrice;
     }
 
     @Column

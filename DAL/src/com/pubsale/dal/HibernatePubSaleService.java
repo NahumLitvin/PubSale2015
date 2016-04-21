@@ -7,6 +7,7 @@ import org.jinq.jpa.JPAJinqStream;
 import org.jinq.jpa.JinqJPAStreamProvider;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
+import retrofit.http.Body;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -147,6 +148,11 @@ public class HibernatePubSaleService implements IPubSaleService {
         Type listType = new TypeToken<List<CategoryDTO>>() {
         }.getType();
         return modelMapper.map(list, listType);
+    }
+
+    @Override
+    public IsActionSuccededDTO BidInAuction(@Body BidRequestDTO request) {
+        return null;
     }
 
     private void registerUser(RegisterRequestDTO request) throws NoSuchAlgorithmException, InvalidKeySpecException {

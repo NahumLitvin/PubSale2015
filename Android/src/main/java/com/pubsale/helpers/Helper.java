@@ -1,4 +1,4 @@
-package com.pubsale.app;
+package com.pubsale.helpers;
 
 import android.app.Activity;
 import android.content.Context;

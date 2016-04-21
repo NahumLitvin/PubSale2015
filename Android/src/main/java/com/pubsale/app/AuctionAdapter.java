@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.pubsale2015.R;
 import com.pubsale.dto.AuctionDTO;
+import com.pubsale.helpers.Helper;
 
 /**
  * Created by Nahum on 09/04/2016.

@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import com.example.pubsale2015.R;
-import com.pubsale.app.Helper;
 import com.pubsale.app.fragments.AuctionsFragment;
 import com.pubsale.app.fragments.CategoriesFragment;
 import com.pubsale.dto.GetAuctionsRequestDTO;
+import com.pubsale.helpers.Helper;
 
 /**
  * Created by Nahum on 05/03/2016.
@@ -52,7 +52,7 @@ public class SearchActivity extends Activity {
 
         GetAuctionsRequestDTO request = new GetAuctionsRequestDTO();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        auctionsFragment = AuctionsFragment.newInstance(request, this);
+        auctionsFragment = AuctionsFragment.newInstance(request, true);
         ft.replace(R.id.auctions_fragment, auctionsFragment);
         ft.commit();
     }

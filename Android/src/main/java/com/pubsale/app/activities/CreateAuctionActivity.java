@@ -20,13 +20,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.example.pubsale2015.R;
-import com.pubsale.app.Helper;
 import com.pubsale.app.fragments.CategoriesFragment;
 import com.pubsale.client.PubServiceClient;
 import com.pubsale.dto.AuctionDTO;
 import com.pubsale.dto.CreateAuctionRequestDTO;
 import com.pubsale.dto.IsActionSuccededDTO;
 import com.pubsale.dto.IsLoggedInRequestDTO;
+import com.pubsale.helpers.Helper;
 
 import java.io.File;
 import java.io.IOException;

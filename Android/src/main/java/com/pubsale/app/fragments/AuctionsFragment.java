@@ -1,8 +1,7 @@
 package com.pubsale.app.fragments;
 
-import android.app.Activity;
+import android.app.DialogFragment;
 import android.app.ListFragment;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,13 +21,13 @@ import java.util.List;
  */
 public class AuctionsFragment extends ListFragment implements AdapterView.OnItemClickListener {
     private GetAuctionsRequestDTO auctionsRequest;
-    private Class activityToOpenOnClick;
+    private boolean isBuyMode;
 
-    public static final AuctionsFragment newInstance(GetAuctionsRequestDTO auctionsRequest, Activity activityToOpenOnClick) {
+    public static final AuctionsFragment newInstance(GetAuctionsRequestDTO auctionsRequest, boolean isBuyMode) {
         AuctionsFragment f = new AuctionsFragment();
         Bundle bdl = new Bundle(2);
         bdl.putSerializable("auctionsRequest", auctionsRequest);
-        bdl.putSerializable("class", activityToOpenOnClick.getClass());
+        bdl.putBoolean("isBuyMode", isBuyMode);
         f.setArguments(bdl);
         return f;
     }
@@ -38,7 +37,7 @@ public class AuctionsFragment extends ListFragment implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         if (getArguments() == null) return;
         auctionsRequest = (GetAuctionsRequestDTO) getArguments().getSerializable("auctionsRequest");
-        activityToOpenOnClick = (Class) getArguments().getSerializable("class");
+        isBuyMode = getArguments().getBoolean("isBuyMode");
         new GetMyAuctionsTask(auctionsRequest).execute();
     }
 
@@ -59,7 +58,8 @@ public class AuctionsFragment extends ListFragment implements AdapterView.OnItem
         AuctionDTO auctionDTO = (AuctionDTO) getListView().getItemAtPosition(position);
         Bundle bundle = new Bundle(1);
         bundle.putSerializable("auctionDTO", auctionDTO);
-        startActivity(new Intent(getActivity(), activityToOpenOnClick.getClass()), bundle);
+        DialogFragment newFragment = AuctionViewFragment.newInstance(auctionDTO, isBuyMode);
+        newFragment.show(getFragmentManager(), "dialog");
     }
 
     public void search(GetAuctionsRequestDTO getAuctionsRequestDTO) {

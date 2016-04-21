@@ -7,6 +7,7 @@ import com.squareup.okhttp.OkHttpClient;
 import retrofit.RestAdapter;
 import retrofit.client.OkClient;
 import retrofit.converter.JacksonConverter;
+import retrofit.http.Body;
 
 import java.util.List;
 
@@ -93,6 +94,10 @@ public class PubServiceClient implements IPubSaleService {
             e.printStackTrace();
             Log.e("GetCategories", e.getMessage());
         }
+        return null;
+    }
+
+    public IsActionSuccededDTO BidInAuction(@Body BidRequestDTO request) {
         return null;
     }
 

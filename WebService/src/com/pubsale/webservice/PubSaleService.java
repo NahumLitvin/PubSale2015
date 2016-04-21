@@ -3,6 +3,7 @@ package com.pubsale.webservice;
 import com.pubsale.dal.HibernatePubSaleService;
 import com.pubsale.dto.*;
 import com.pubsale.interfaces.IPubSaleService;
+import retrofit.http.Body;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -77,6 +78,15 @@ public class PubSaleService implements IPubSaleService {
     @Produces(MediaType.APPLICATION_JSON)
     public List<CategoryDTO> GetCategories() {
         return service.GetCategories();
+    }
+
+    @Path("/BidInAuction")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Override
+    public IsActionSuccededDTO BidInAuction(@Body BidRequestDTO request) {
+        return service.BidInAuction(request);
     }
 
     @Override

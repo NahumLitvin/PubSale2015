@@ -30,7 +30,7 @@ public class MyAuctionsActivity extends Activity {
 
         GetAuctionsRequestDTO request = new GetAuctionsRequestDTO();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        auctionsFragment = AuctionsFragment.newInstance(request, this);
+        auctionsFragment = AuctionsFragment.newInstance(request, false);
         ft.replace(R.id.auctions_fragment, auctionsFragment);
         ft.commit();
 
