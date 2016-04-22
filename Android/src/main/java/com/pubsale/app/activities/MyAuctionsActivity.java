@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.example.pubsale2015.R;
 import com.pubsale.app.fragments.AuctionsFragment;
 import com.pubsale.dto.GetAuctionsRequestDTO;
+import com.pubsale.helpers.Helper;
 
 /**
  * Created by Nahum on 05/03/2016.
@@ -30,6 +31,7 @@ public class MyAuctionsActivity extends Activity {
 
         GetAuctionsRequestDTO request = new GetAuctionsRequestDTO();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
+        request.setSellerEmail(Helper.GetIsLoggedInRequest(this).getEmail());
         auctionsFragment = AuctionsFragment.newInstance(request, false);
         ft.replace(R.id.auctions_fragment, auctionsFragment);
         ft.commit();

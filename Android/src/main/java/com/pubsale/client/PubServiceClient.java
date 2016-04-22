@@ -38,7 +38,7 @@ public class PubServiceClient implements IPubSaleService {
             return service.IsLoggedIn(request);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("IsLoggedIn", e.getMessage());
+            Log.e("PubServiceClient", e.getMessage());
         }
         return null;
     }
@@ -49,7 +49,7 @@ public class PubServiceClient implements IPubSaleService {
             return service.Login(request);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("Login", e.getMessage());
+            Log.e("PubServiceClient", e.getMessage());
         }
         return null;
     }
@@ -60,18 +60,18 @@ public class PubServiceClient implements IPubSaleService {
             return service.Register(request);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("Register", "" + e.getMessage());
+            Log.e("PubServiceClient", "" + e.getMessage());
         }
         return null;
     }
 
 
-    public IsActionSuccededDTO CreateAuction(CreateAuctionRequestDTO request) {
+    public IsActionSucceededDTO CreateAuction(CreateAuctionRequestDTO request) {
         try {
             return service.CreateAuction(request);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("CreateAuction", "" + e.getMessage());
+            Log.e("PubServiceClient", "" + e.getMessage());
         }
         return null;
     }
@@ -82,7 +82,7 @@ public class PubServiceClient implements IPubSaleService {
             return service.GetAuctions(request);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("GetAuctions", e.getMessage());
+            Log.e("PubServiceClient", "" + e.getMessage());
         }
         return null;
     }
@@ -92,12 +92,28 @@ public class PubServiceClient implements IPubSaleService {
             return service.GetCategories();
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("GetCategories", e.getMessage());
+            Log.e("PubServiceClient", "" + e.getMessage());
         }
         return null;
     }
 
-    public IsActionSuccededDTO BidInAuction(@Body BidRequestDTO request) {
+    public IsActionSucceededDTO BidInAuction(@Body BidRequestDTO request) {
+        try {
+            return service.BidInAuction(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("PubServiceClient", "" + e.getMessage());
+        }
+        return null;
+    }
+
+    public UserDTO GetWinnerInAuction(@Body GetWinnerInAuctionDTO request) {
+        try {
+            return service.GetWinnerInAuction(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("PubServiceClient", e.getMessage());
+        }
         return null;
     }
 

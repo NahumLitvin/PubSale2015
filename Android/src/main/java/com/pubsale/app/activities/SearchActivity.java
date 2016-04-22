@@ -27,12 +27,12 @@ public class SearchActivity extends Activity {
         searchAuction = (EditText) findViewById(R.id.search_auction);
         categoriesFragment = (CategoriesFragment) getFragmentManager().findFragmentById(R.id.sp_category);
         req.setBuyerEmail(Helper.GetIsLoggedInRequest(this).getEmail());
+        req.setEndDateAfterUnixTime(System.currentTimeMillis() / 1000L);
         searchAuction.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
 
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
-
                     Search();
                 }
             }
@@ -60,7 +60,7 @@ public class SearchActivity extends Activity {
     private void Search() {
         req.setCategory(categoriesFragment.getSelectedCategory());
         req.setFreeText(searchAuction.getText().toString());
-
+        req.setEndDateAfterUnixTime(System.currentTimeMillis() / 1000);
         auctionsFragment.search(req);
     }
 

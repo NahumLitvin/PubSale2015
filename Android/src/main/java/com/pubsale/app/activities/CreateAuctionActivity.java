@@ -24,7 +24,7 @@ import com.pubsale.app.fragments.CategoriesFragment;
 import com.pubsale.client.PubServiceClient;
 import com.pubsale.dto.AuctionDTO;
 import com.pubsale.dto.CreateAuctionRequestDTO;
-import com.pubsale.dto.IsActionSuccededDTO;
+import com.pubsale.dto.IsActionSucceededDTO;
 import com.pubsale.dto.IsLoggedInRequestDTO;
 import com.pubsale.helpers.Helper;
 
@@ -268,7 +268,7 @@ public class CreateAuctionActivity extends Activity {
     }
 
 
-    private class CreateAuctionTask extends AsyncTask<CreateAuctionRequestDTO, Void, IsActionSuccededDTO> {
+    private class CreateAuctionTask extends AsyncTask<CreateAuctionRequestDTO, Void, IsActionSucceededDTO> {
 
 
         ProgressDialog dialog;
@@ -279,12 +279,12 @@ public class CreateAuctionActivity extends Activity {
         }
 
         @Override
-        protected IsActionSuccededDTO doInBackground(CreateAuctionRequestDTO... request) {
+        protected IsActionSucceededDTO doInBackground(CreateAuctionRequestDTO... request) {
             return PubServiceClient.getInstance().CreateAuction(request[0]);
         }
 
         @Override
-        protected void onPostExecute(IsActionSuccededDTO response) {
+        protected void onPostExecute(IsActionSucceededDTO response) {
             dialog.dismiss();
             if (response == null) {
                 Toast.makeText(CreateAuctionActivity.this, "Internal Error!", Toast.LENGTH_LONG).show();

@@ -258,5 +258,52 @@
         />
     </TableRow>
 
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/winner_name"
+                android:id="@+id/textView3"
+                android:layout_column="0"
+        />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/phone"
+                android:id="@+id/textView4"
+                android:layout_column="1"
+        />
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/tv_winner_name"
+                android:layout_column="0"
+        />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:id="@+id/tv_winner_phone"
+                android:layout_column="1"
+        />
+    </TableRow>
 
 </TableLayout>

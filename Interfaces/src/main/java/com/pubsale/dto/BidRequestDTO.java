@@ -7,16 +7,16 @@ import java.io.Serializable;
  */
 public class BidRequestDTO implements Serializable {
     private static final long serialVersionUID = 3760393943723412324L;
-    AuctionDTO auction;
+    int auctionId;
     IsLoggedInRequestDTO request;
     int bidValue;
 
-    public AuctionDTO getAuction() {
-        return auction;
+    public int getAuctionId() {
+        return auctionId;
     }
 
-    public void setAuction(AuctionDTO auction) {
-        this.auction = auction;
+    public void setAuctionId(int auction) {
+        this.auctionId = auction;
     }
 
     public IsLoggedInRequestDTO getRequest() {

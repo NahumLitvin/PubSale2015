@@ -63,9 +63,20 @@ public class HibernatePubSaleServiceTest {
     @Test
     public void IsLoggedInTrueIfSessionIsOk() {
         LoginResponseDTO loginNahum = RegisterAndLoginNahum();
-        IsLoggedInResponseDTO isLoggedIn = service.IsLoggedIn(new IsLoggedInRequestDTO(loginNahum.getSession().toString(), LNAHUM_GMAIL_COM));
+        IsLoggedInResponseDTO isLoggedIn = service.IsLoggedIn(new IsLoggedInRequestDTO(loginNahum.getSession(), LNAHUM_GMAIL_COM));
         Assert.assertTrue(isLoggedIn.isLoggedIn());
     }
+
+
+    @Test
+    public void BidBadUserFails() {
+        service.BidInAuction(null);
+    }
+
+
+
+
+
 
     private LoginResponseDTO RegisterAndLoginNahum() {
         RegisterNahum();
@@ -83,6 +94,10 @@ public class HibernatePubSaleServiceTest {
         LoginRequestDTO request = new LoginRequestDTO(LNAHUM_GMAIL_COM, PASSWORD);
         return service.Login(request);
 
+    }
+
+    private IsLoggedInRequestDTO badLoginRequest() {
+        return new IsLoggedInRequestDTO(UUID.randomUUID().toString(), LNAHUM_GMAIL_COM);
     }
 
 }

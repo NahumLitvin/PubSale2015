@@ -101,9 +101,9 @@ public class HibernatePubSaleService implements IPubSaleService {
     }
 
     @Override
-    public IsActionSuccededDTO CreateAuction(CreateAuctionRequestDTO request) {
+    public IsActionSucceededDTO CreateAuction(CreateAuctionRequestDTO request) {
         if (!IsLoggedIn(request.getIsLoggedIn()).isLoggedIn())
-            return new IsActionSuccededDTO(false, "not logged in");
+            return new IsActionSucceededDTO(false, "not logged in");
 
 
         try {
@@ -113,10 +113,10 @@ public class HibernatePubSaleService implements IPubSaleService {
             em.persist(auction);
             em.getTransaction().commit();
         } catch (Exception ex) {
-            return new IsActionSuccededDTO(false, ex.getMessage());
+            return new IsActionSucceededDTO(false, ex.getMessage());
         }
 
-        return new IsActionSuccededDTO(true, "");
+        return new IsActionSucceededDTO(true, "");
     }
 
     @Override
@@ -126,6 +126,7 @@ public class HibernatePubSaleService implements IPubSaleService {
         String freeText = request.getFreeText();
         if (freeText != null && !freeText.isEmpty())
             stream = stream.where(x -> x.getName().contains(freeText) || x.getDescription().contains(freeText));
+
         String sellerEmail = request.getSellerEmail();
         if (sellerEmail != null && !sellerEmail.isEmpty())
             stream = stream.where(x -> x.getSeller().getEmail().equals(sellerEmail));
@@ -134,6 +135,17 @@ public class HibernatePubSaleService implements IPubSaleService {
         if (category != null) {
             Integer id = category.getId();
             stream = stream.where(x -> x.getCategory().getId() == id);
+        }
+
+        long after = request.getEndDateAfterUnixTime();
+        long before = request.getEndDateBeforeUnixTime();
+
+        if (after != 0) {
+            stream = stream.where(x -> x.getEndUnixTime() > after);
+        }
+
+        if (before != 0) {
+            stream = stream.where(x -> x.getEndUnixTime() < before);
         }
         Type listType = new TypeToken<List<AuctionDTO>>() {
         }.getType();
@@ -151,8 +163,81 @@ public class HibernatePubSaleService implements IPubSaleService {
     }
 
     @Override
-    public IsActionSuccededDTO BidInAuction(@Body BidRequestDTO request) {
-        return null;
+    public synchronized IsActionSucceededDTO BidInAuction(@Body BidRequestDTO request) {
+        IsActionSucceededDTO dto = new IsActionSucceededDTO();
+        int id = request.getAuctionId();
+
+        if (!IsLoggedIn(request.getRequest()).isLoggedIn()) {
+            dto.setFailReason("user is not logged in");
+            return dto;
+        }
+
+        //valid session get item
+        JPAJinqStream<AuctionDAO> stream = streams.streamAll(em, AuctionDAO.class);
+        stream = stream.where(x -> x.getId() == id);
+        final Optional<AuctionDAO> one = stream.findOne();
+
+        if (!one.isPresent()) {
+            dto.setFailReason("item doesn't exist");
+            return dto;
+        }
+
+        final AuctionDAO auction = one.get();
+        if (auction.getEndUnixTime() * 1000L <= System.currentTimeMillis()) {
+            dto.setFailReason("auction has ended.");
+            return dto;
+        }
+
+        if (Objects.equals(auction.getSeller().getEmail(), request.getRequest().getEmail())) {
+            dto.setFailReason("cannot buy your own item.");
+            return dto;
+        }
+
+        if (auction.getEndPrice() != 0 && request.getBidValue() > one.get().getEndPrice()) {
+            dto.setFailReason("cannot place bid over 'buy now' price");
+            return dto;
+        }
+
+        if (auction.getCurrentPrice() > request.getBidValue()) {
+            dto.setFailReason("bid must be greater than current price");
+            return dto;
+        }
+
+        //buy now bid
+        if (auction.getEndPrice() != 0 && request.getBidValue() == auction.getEndPrice()) {
+            em.getTransaction().begin();
+            auction.setTopBidder(getUser(request.getRequest().getEmail()).get());
+            auction.setCurrentPrice(auction.getEndPrice());
+            auction.setEndUnixTime(System.currentTimeMillis() / 1000L);
+            em.persist(auction);
+            em.getTransaction().commit();
+            return dto;
+        }
+        // regular bid
+        em.getTransaction().begin();
+        auction.setTopBidder(getUser(request.getRequest().getEmail()).get());
+        auction.setCurrentPrice(request.getBidValue());
+        em.persist(auction);
+        em.getTransaction().commit();
+
+        return dto;
+    }
+
+    @Override
+    public UserDTO GetWinnerInAuction(@Body GetWinnerInAuctionDTO request) {
+        if (IsLoggedIn(request.getIsLoggedIn()).isLoggedIn()) {
+            return null;
+        }
+        UserDTO resposne = new UserDTO();
+        JPAJinqStream<AuctionDAO> stream = streams.streamAll(em, AuctionDAO.class);
+        int id = request.getAuctionId();
+        stream = stream.where(x -> x.getId() == id);
+        final Optional<AuctionDAO> one = stream.findOne();
+        if (!one.isPresent()) return null;
+        AuctionDAO auction = one.get();
+        resposne.setName(auction.getTopBidder().getName());
+        resposne.setPhone(auction.getTopBidder().getPhone());
+        return resposne;
     }
 
     private void registerUser(RegisterRequestDTO request) throws NoSuchAlgorithmException, InvalidKeySpecException {

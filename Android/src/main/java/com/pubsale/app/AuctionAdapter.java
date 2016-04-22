@@ -55,10 +55,12 @@ public class AuctionAdapter extends BaseAdapter {
         TextView enddate = (TextView) vi.findViewById(R.id.auction_row_txtEndDate);
         ImageView image = (ImageView) vi.findViewById(R.id.auction_row_imgImage);
         TextView price = (TextView) vi.findViewById(R.id.auction_row_txtProductPrice);
-
+        if (auctions[position].getEndUnixTime() * 1000 < System.currentTimeMillis()) {//if auction is over color in red
+            prodcutname.setTextColor(0xFFFF0000);
+        }
         prodcutname.setText(auctions[position].getName());
         category.setText(auctions[position].getCategory().getName());
-        enddate.setText(new java.util.Date(auctions[position].getEndUnixTime() * 1000).toString());
+        enddate.setText(new java.util.Date(auctions[position].getEndUnixTime() * 1000L).toString());
         image.setImageBitmap(Helper.ByteArrayToBitmap(auctions[position].getPhoto()));
         price.setText(String.valueOf(auctions[position].getCurrentPrice()));
         return vi;

@@ -11,7 +11,7 @@ import java.util.List;
 
 @Path("/pubsale")
 public class PubSaleService implements IPubSaleService {
-    static HibernatePubSaleService service = new HibernatePubSaleService();
+    HibernatePubSaleService service = new HibernatePubSaleService();
 
     @GET
     @Path("/hi")
@@ -60,7 +60,7 @@ public class PubSaleService implements IPubSaleService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public IsActionSuccededDTO CreateAuction(CreateAuctionRequestDTO request) {
+    public IsActionSucceededDTO CreateAuction(CreateAuctionRequestDTO request) {
         return service.CreateAuction(request);
     }
 
@@ -85,8 +85,13 @@ public class PubSaleService implements IPubSaleService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Override
-    public IsActionSuccededDTO BidInAuction(@Body BidRequestDTO request) {
+    public IsActionSucceededDTO BidInAuction(@Body BidRequestDTO request) {
         return service.BidInAuction(request);
+    }
+
+    @Override
+    public UserDTO GetWinnerInAuction(@Body GetWinnerInAuctionDTO request) {
+        return null;
     }
 
     @Override

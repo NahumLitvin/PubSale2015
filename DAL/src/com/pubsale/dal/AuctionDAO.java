@@ -13,7 +13,7 @@ class AuctionDAO {
     private long startUnixTime;
     private long endUnixTime;
     private UserDAO seller;
-    private int topBidSum;
+
     private UserDAO topBidder;
     private CategoryDAO category;
 
@@ -113,15 +113,6 @@ class AuctionDAO {
         this.topBidder = topBidder;
     }
 
-
-    @Column
-    public int getTopBidSum() {
-        return topBidSum;
-    }
-
-    public void setTopBidSum(int topBidSum) {
-        this.topBidSum = topBidSum;
-    }
 
     @OneToOne
     public CategoryDAO getCategory() {
