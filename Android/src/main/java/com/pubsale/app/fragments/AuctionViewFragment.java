@@ -6,15 +6,14 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.example.pubsale2015.R;
 import com.pubsale.client.PubServiceClient;
-import com.pubsale.dto.AuctionDTO;
-import com.pubsale.dto.BidRequestDTO;
-import com.pubsale.dto.IsActionSucceededDTO;
+import com.pubsale.dto.*;
 import com.pubsale.helpers.Helper;
 
 import java.text.SimpleDateFormat;
@@ -25,7 +24,8 @@ import java.text.SimpleDateFormat;
 public class AuctionViewFragment extends DialogFragment {
     SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
     BidRequestDTO request = new BidRequestDTO();
-
+    TextView winnerName;
+    TextView winnerPhone;
     public static AuctionViewFragment newInstance(AuctionDTO auction, boolean isBuyMode) {
         AuctionViewFragment f = new AuctionViewFragment();
         Bundle bdl = new Bundle(2);
@@ -60,23 +60,34 @@ public class AuctionViewFragment extends DialogFragment {
         Button btnBid = (Button) view.findViewById(R.id.btn_bid);
         Button btnBuyNow = (Button) view.findViewById(R.id.btn_buy_now);
 
-        TextView winnerName = (TextView) view.findViewById(R.id.tv_winner_name);
-        TextView winnerPhone = (TextView) view.findViewById(R.id.tv_winner_phone);
+
+        winnerName = (TextView) view.findViewById(R.id.tv_winner_name);
+        winnerPhone = (TextView) view.findViewById(R.id.tv_winner_phone);
+
+        TextView lblwinnerName = (TextView) view.findViewById(R.id.lblWinnerName);
+        TextView lblwinnerPhone = (TextView) view.findViewById(R.id.lblWinnerPhone);
 
         final AuctionDTO auction = (AuctionDTO) getArguments().getSerializable("auction");
 
         Boolean isBuyMode = getArguments().getBoolean("isBuyMode");
         assert auction != null;
-        if (auction.getEndUnixTime() * 1000 < System.currentTimeMillis()) {
+        if (auction.getEndUnixTime() * 1000L < System.currentTimeMillis()) {
+            Log.e("EndUnixTime()", String.valueOf(auction.getEndUnixTime()));
+            Log.e("currentTimeMillis()", String.valueOf(System.currentTimeMillis()));
             //if auction is over color in red and show seller data
             itemName.setTextColor(0xFFFF0000);
             winnerName.setVisibility(View.VISIBLE);
             winnerPhone.setVisibility(View.VISIBLE);
-            winnerName.setText(auction.getTopBidder().getName());
-            winnerPhone.setText(auction.getTopBidder().getPhone());
+            lblwinnerName.setVisibility(View.VISIBLE);
+            lblwinnerPhone.setVisibility(View.VISIBLE);
+            new GetWinnerTask(auction.getId()).execute();
+
         } else {
+            itemName.setTextColor(0xFFFFFFFF);
             winnerName.setVisibility(View.GONE);
             winnerPhone.setVisibility(View.GONE);
+            lblwinnerName.setVisibility(View.GONE);
+            lblwinnerPhone.setVisibility(View.GONE);
         }
         itemName.setText(auction.getName());
         auctionEnd.setText(myFormat.format(new java.util.Date(auction.getEndUnixTime() * 1000L)));
@@ -92,13 +103,17 @@ public class AuctionViewFragment extends DialogFragment {
         } else {
             request.setAuctionId(auction.getId());
             request.setRequest(Helper.GetIsLoggedInRequest(getActivity()));
+
             if (immediateBuyPrice.getText().length() == 0) {
                 btnBuyNow.setVisibility(View.GONE);
+            } else {
+                btnBuyNow.setText(String.format(btnBuyNow.getText().toString(), auction.getEndPrice()));
                 btnBuyNow.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         request.setBidValue(auction.getEndPrice());
                         new BidTask(AuctionViewFragment.this).execute();
                     }
+
                 });
             }
             btnBid.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +171,39 @@ public class AuctionViewFragment extends DialogFragment {
             }
             Toast.makeText(getActivity(), "success", Toast.LENGTH_LONG).show();
             t.dismiss();
+
+        }
+    }
+
+    private class GetWinnerTask extends AsyncTask<Void, Void, UserDTO> {
+
+        ProgressDialog dialog;
+        int auctionId;
+
+        GetWinnerTask(int auctionId) {
+            this.auctionId = auctionId;
+        }
+
+        @Override
+        protected UserDTO doInBackground(Void... voids) {
+            GetWinnerInAuctionDTO request = new GetWinnerInAuctionDTO();
+            request.setAuctionId(auctionId);
+            request.setIsLoggedIn(Helper.GetIsLoggedInRequest(getActivity()));
+            return PubServiceClient.getInstance().GetWinnerInAuction(request);
+
+        }
+
+        @Override
+        protected void onPostExecute(UserDTO response) {
+            if (response == null) {
+                Toast.makeText(getActivity(), "Internal Error!", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            winnerName.setText(response.getName());
+            winnerPhone.setText(response.getPhone());
+
+
 
         }
     }

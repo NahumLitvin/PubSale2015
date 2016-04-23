@@ -57,6 +57,8 @@ public class AuctionAdapter extends BaseAdapter {
         TextView price = (TextView) vi.findViewById(R.id.auction_row_txtProductPrice);
         if (auctions[position].getEndUnixTime() * 1000 < System.currentTimeMillis()) {//if auction is over color in red
             prodcutname.setTextColor(0xFFFF0000);
+        } else {
+            prodcutname.setTextColor(0xFFFFFFFF);
         }
         prodcutname.setText(auctions[position].getName());
         category.setText(auctions[position].getCategory().getName());

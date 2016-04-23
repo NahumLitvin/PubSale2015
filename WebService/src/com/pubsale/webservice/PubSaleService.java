@@ -89,9 +89,13 @@ public class PubSaleService implements IPubSaleService {
         return service.BidInAuction(request);
     }
 
+    @Path("/GetWinnerInAuction")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     @Override
     public UserDTO GetWinnerInAuction(@Body GetWinnerInAuctionDTO request) {
-        return null;
+        return service.GetWinnerInAuction(request);
     }
 
     @Override

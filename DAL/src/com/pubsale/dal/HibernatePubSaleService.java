@@ -225,7 +225,7 @@ public class HibernatePubSaleService implements IPubSaleService {
 
     @Override
     public UserDTO GetWinnerInAuction(@Body GetWinnerInAuctionDTO request) {
-        if (IsLoggedIn(request.getIsLoggedIn()).isLoggedIn()) {
+        if (!IsLoggedIn(request.getIsLoggedIn()).isLoggedIn()) {
             return null;
         }
         UserDTO resposne = new UserDTO();

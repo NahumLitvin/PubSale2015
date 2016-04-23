@@ -87,6 +87,13 @@ public class CreateAuctionActivity extends Activity {
             }
         });
 
+        isImmediateBuy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                immediateBuyPrice.setEnabled(isChecked);
+                immediateBuyPrice.setText("0");
+            }
+        });
+
         createAuction.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 

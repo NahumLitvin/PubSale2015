@@ -233,7 +233,7 @@
 
                 android:layout_margin="0dp"
                 android:enabled="true"
-                android:clickable="true"
+                android:clickable="false"
                 android:focusableInTouchMode="true"
         />
     </TableRow>
@@ -253,8 +253,8 @@
                 android:background="#ffff0000"
                 android:layout_margin="0dp"
                 android:enabled="true"
-                android:clickable="true"
-                android:focusableInTouchMode="true"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
         />
     </TableRow>
 
@@ -268,7 +268,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/winner_name"
-                android:id="@+id/textView3"
+                android:id="@+id/lblWinnerName"
                 android:layout_column="0"
         />
 
@@ -276,8 +276,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/phone"
-                android:id="@+id/textView4"
+                android:text="Large Text"
+                android:id="@+id/lblWinnerPhone"
                 android:layout_column="1"
         />
     </TableRow>

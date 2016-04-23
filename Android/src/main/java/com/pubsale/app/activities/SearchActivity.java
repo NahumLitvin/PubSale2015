@@ -20,6 +20,12 @@ public class SearchActivity extends Activity {
     CategoriesFragment categoriesFragment;
     EditText searchAuction;
     GetAuctionsRequestDTO req = new GetAuctionsRequestDTO();
+
+
+    public SearchActivity() {
+        super();
+        req.setEndDateAfterUnixTime(System.currentTimeMillis() / 1000L);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +56,8 @@ public class SearchActivity extends Activity {
         });
 
 
-        GetAuctionsRequestDTO request = new GetAuctionsRequestDTO();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        auctionsFragment = AuctionsFragment.newInstance(request, true);
+        auctionsFragment = AuctionsFragment.newInstance(req, true);
         ft.replace(R.id.auctions_fragment, auctionsFragment);
         ft.commit();
     }
