@@ -1,7 +1,9 @@
 # PubSale2015
 This is my final project in the course [Advanced Java Programing Workshop - 20503](http://www.openu.ac.il/courses/20503.htm) at The Open University Of Israel
 The documentaion is in Hebrew.
-but the code is regular java.
+[תיאור הפרוייקט](https://github.com/NahumLitvin/PubSale2015/blob/master/README.md)
+[מסמך דרישות תוכנה](https://github.com/NahumLitvin/PubSale2015/blob/master/SRS.pdf)
+The code is regular java.
 this is an example of a client-server-database application written in java only
 using:
 
