@@ -6,7 +6,7 @@ The documentaion is in Hebrew.
 The code is regular java.
 this is an example of a client-server-database application written in java only
 using:
-
+  *[Injelij IDEA Ultimate] (https://www.jetbrains.com/idea/) student license
   * java 8
   * android
   * [retrofit 1.9](http://square.github.io/retrofit/)
